@@ -3,7 +3,6 @@
 @section('front_title', 'HomePage')
 
 
-
 <!-- Start Navbar Area -->
 @include('Frontend.layouts.navbar')
 <!-- End Navbar Area -->

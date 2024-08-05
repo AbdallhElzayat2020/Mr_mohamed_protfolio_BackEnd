@@ -19,3 +19,10 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+//DASHBOARD
+//Route::get('/dashboard', function () {
+//    return view('admin.index');
+//})->name('home');
+
+
+require __DIR__ . '/dashboard.php';
