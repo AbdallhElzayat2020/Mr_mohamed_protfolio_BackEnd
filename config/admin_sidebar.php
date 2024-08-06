@@ -1,10 +1,15 @@
 <?php
 return [
-
-    'menu' => [
-        'Dashboard' => [
-            'icon' => 'fas fa-fire',
-            'url' => 'dashboard',
-        ],
+    [
+        'route' => 'dashboard.dashboard',
+        'title' => 'dashboard',
+    ],
+    [
+        'route' => 'dashboard.categories.index',
+        'title' => 'Categories',
+    ],
+    [
+        'route' => 'dashboard.products.index',
+        'title' => 'Products',
     ],
 ];

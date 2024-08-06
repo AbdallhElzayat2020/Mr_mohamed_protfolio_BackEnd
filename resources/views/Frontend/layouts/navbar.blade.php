@@ -5,7 +5,7 @@
                 <div class="logo">
                     <a href="index.html">
                         <img src="{{ asset('assets/frontend/assets/images/black-logo.png') }}" class="main-logo"
-                            alt="logo">
+                             alt="logo">
                     </a>
                 </div>
             </div>
@@ -17,7 +17,7 @@
             <nav class="navbar navbar-expand-md navbar-light">
                 <a class="navbar-brand me-0" href="index.html">
                     <img src="{{ asset('assets/frontend/assets/images/black-logo.png') }}" class="black-logo"
-                        alt="logo">
+                         alt="logo">
                 </a>
 
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
@@ -69,7 +69,7 @@
                     <div class="others-options">
                         <ul>
                             <li>
-                                <a class="default-btn text-decoration-none" href="login.html">
+                                <a class="default-btn text-decoration-none" href="{{route('login')}}">
                                     <i class="ri-arrow-right-line"></i>
                                     سجل الان
                                 </a>
