@@ -57,37 +57,41 @@
                                 فريق العمل
                             </a>
                         </li>
-                        @auth
-                            <li class="nav-item">
-                                <a href="{{route('profile')}}" class="nav-link">الملف الشخصي</a>
-                            </li>
-                        @else
-                            <li class="nav-item">
-                                <a href="{{route('contact')}}" class="nav-link">تواصل معنا</a>
-                            </li>
-                        @endauth
 
 
                     </ul>
 
                     <div class="others-options">
-                        <ul>
-                            <li>
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
                                 @auth
-                                    <a class="default-btn text-decoration-none" href="{{route('profile')}}">
-                                        <i class="ri-user-line"></i>
-                                        {{ Auth::user()->name }}
+                                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                       data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="ri-user-line"></i> {{ Auth::user()->name }}
                                     </a>
+                                    <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                                        <li>
+                                            <a class="dropdown-item" href="{{ route('profile') }}">
+                                                الملف الشخصي
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                تسجيل الخروج
+                                            </a>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                  class="d-none">
+                                                @csrf
+                                            </form>
+                                        </li>
+                                    </ul>
                                 @else
-                                    <a class="default-btn text-decoration-none" href="{{route('login')}}">
+                                    <a class="default-btn text-decoration-none p-3" href="{{route('login')}}">
                                         <i class="ri-arrow-right-line"></i>
                                         سجل الان
                                     </a>
                                 @endauth
-
-                                <a class="quote d-none text-decoration-none" href="contact.html">
-                                    <i class="ri-chat-quote-line"></i>
-                                </a>
                             </li>
                         </ul>
                     </div>

@@ -73,11 +73,8 @@
 <!-- End Navbar Area -->
 
 <!-- Dashboard -->
-<div
-    style="background-color: var(--primaryColor);height: 100vh;"
-    id="dashboard"
-    class="pt-10 pb-10"
->
+<div style="background-color: var(--primaryColor);height: 100vh;" id="dashboard"
+    class="pt-10 pb-10">
     <div class="container">
         <div class="dashboard-main">
             <div class="row">
@@ -86,8 +83,7 @@
                         <div class="profile-sec">
                             <div
                                 style="background-color: var(--secondaryColor)"
-                                class="author-news mb-3"
-                            >
+                                class="author-news mb-3">
                                 <div class="author-news-content text-center p-4 py-5">
                                     <div class="author-content pt-2 p-0">
                                         <h5 class="mb-1 white">
