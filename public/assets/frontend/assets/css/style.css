@@ -16,11 +16,13 @@
 body {
     margin: 0;
     padding: 0;
+    /*overflow-x: hidden;*/
     font-weight: 400;
     color: var(--paragraphColor);
     font-size: var(--fontSize);
     font-family: var(--body-font-family);
 }
+
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     color: var(--blackColor);
@@ -1480,9 +1482,11 @@ Security Area Style
 .single-security-info h3 a:hover {
     color: var(--secondaryColor);
 }
+
 .single-security-info p {
     color: var(--secondaryColor);
 }
+
 .single-security-info .read-more {
     position: relative;
     color: var(--primaryColor);
@@ -3824,6 +3828,7 @@ Solutions Area Style
 .testimonial-area {
     background-color: var(--primaryColor);
 }
+
 .solutions-area.pages-style {
     background-color: #fdfdff;
 }

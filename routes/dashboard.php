@@ -1,11 +1,9 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminAuthController;
-use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\AdminHomeController;
+use App\Http\Controllers\Admin\AdminHomePageController;
 use Illuminate\Support\Facades\Route;
-
-
-
 
 
 Route::group(
@@ -24,8 +22,10 @@ Route::group(
         'as' => 'admin.',
         'middleware' => ['admin'],
     ], function () {
-    Route::get('dashboard', [HomeController::class, 'index'])->name('dashboard');
+    Route::get('dashboard', [AdminHomeController::class, 'index'])->name('dashboard');
 
     Route::post('logout', [AdminAuthController::class, 'logout'])->name('logout');
 
+    Route::resource('homepage', AdminHomePageController::class);
+//Route::
 });

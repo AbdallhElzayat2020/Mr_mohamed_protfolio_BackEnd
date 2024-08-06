@@ -23,78 +23,55 @@
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav m-auto">
                         <li class="nav-item">
-                            <a href="{{route('home')}}" class="nav-link active">
-                                الرئيسية
-                            </a>
+                            <a href="{{route('home')}}" class="nav-link active">الرئيسية</a>
                         </li>
-
                         <li class="nav-item">
                             <a href="{{route('about')}}" class="nav-link">من انا</a>
                         </li>
-
                         <li class="nav-item">
-                            <a href="{{route('services')}}" class="nav-link">
-                                الخدمات
-                            </a>
-
+                            <a href="{{route('services')}}" class="nav-link">الخدمات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('gallery')}}" class="nav-link">معرض الاعمال</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('courses')}}" class="nav-link">الكورسات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('team')}}" class="nav-link">فريق العمل</a>
+                        </li>
+                        <li class="nav-item dropdown ">
+                            @auth
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="ri-user-line"></i> {{ Auth::user()->name }}
+                                </a>
+                                <ul style="width: 90px" class="dropdown-menu dropdown-menu-end text-end"
+                                    aria-labelledby="userDropdown">
+                                    <li>
+                                        <a class="dropdown-item" href="{{ route('profile') }}">الملف الشخصي</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            تسجيل الخروج
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                              class="d-none">
+                                            @csrf
+                                        </form>
+                                    </li>
+                                </ul>
+                            @else
+                                <a class="default-btn text-white text-decoration-none px-3 py-1"
+                                   href="{{route('login')}}"></i> سجل الان
+                                </a>
+                            @endauth
                         </li>
 
-                        <li class="nav-item">
-                            <a href="{{route('gallery')}}" class="nav-link">
-                                معرض الاعمال
-                            </a>
-
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{route('courses')}}" class="nav-link ">
-                                الكورسات
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{route('team')}}" class="nav-link">
-                                فريق العمل
-                            </a>
-                        </li>
                     </ul>
-                    <div class="others-options">
-                        <ul class="navbar-nav">
-                            <li class="nav-item dropdown">
-                                @auth
-                                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                       data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="ri-user-line"></i> {{ Auth::user()->name }}
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="userDropdown">
-                                        <li>
-                                            <a class="dropdown-item" href="{{ route('profile') }}">
-                                                الملف الشخصي
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                                تسجيل الخروج
-                                            </a>
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                                  class="d-none">
-                                                @csrf
-                                            </form>
-                                        </li>
-                                    </ul>
-                                @else
-                                    <a class="default-btn text-decoration-none p-3" href="{{route('login')}}">
-                                        <i class="ri-arrow-right-line"></i>
-                                        سجل الان
-                                    </a>
-                                @endauth
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </nav>
         </div>
     </div>
-
 </div>

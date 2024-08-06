@@ -39,11 +39,11 @@ Route::get('/gallery-details', [HomeController::class, 'gallery_details'])->name
 Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
 
 //Login Routes for Users
-//Route::get('/login', [HomeController::class, 'login'])->name('login');
-//Route::post('login', [HomeController::class, 'handleLogin'])->name('handle-login');
+//Route::get('/login', [AdminHomeController::class, 'login'])->name('login');
+//Route::post('login', [AdminHomeController::class, 'handleLogin'])->name('handle-login');
 
 
-// Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+// Route::get('/dashboard', [AdminHomeController::class, 'index'])->name('dashboard');
 //
 //Route::get('/dashboard', function () {
 //    return view('dashboard');

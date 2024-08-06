@@ -73,7 +73,7 @@
 <!-- End Navbar Area -->
 
 <!-- Dashboard -->
-<div style="background-color: var(--primaryColor);height: 100vh;" id="dashboard"
+<div style="background-color: var(--primaryColor);height: 100%;" id="dashboard"
     class="pt-10 pb-10">
     <div class="container">
         <div class="dashboard-main">
