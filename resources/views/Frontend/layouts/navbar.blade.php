@@ -57,10 +57,7 @@
                                 فريق العمل
                             </a>
                         </li>
-
-
                     </ul>
-
                     <div class="others-options">
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
