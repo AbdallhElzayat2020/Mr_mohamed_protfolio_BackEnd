@@ -1,20 +1,8 @@
-/**-----------------------
 
- scrollCue.js - ver.2.0.0
- URL : https://prjct-samwest.github.io/scrollCue/
-
- created by SamWest.
- Copyright (c) 2020 SamWest.
- This plugin is released under the MIT License.
-
- -----------------------**/
-/**  ---------------
-     fadeIn
-*/
 [data-cue="fadeIn"], [data-cues="fadeIn"] > * {
     opacity: 0;
   }
-  
+
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -23,14 +11,14 @@
       opacity: 1;
     }
   }
-  
+
   /**  ---------------
        slideInLeft
   */
   [data-cue="slideInLeft"], [data-cues="slideInLeft"] > * {
     opacity: 0;
   }
-  
+
   @keyframes slideInLeft {
     from {
       opacity: 0;
@@ -41,14 +29,14 @@
       transform: translateX(0);
     }
   }
-  
+
   /**  ---------------
        slideInRight
   */
   [data-cue="slideInRight"], [data-cues="slideInRight"] > * {
     opacity: 0;
   }
-  
+
   @keyframes slideInRight {
     from {
       opacity: 0;
@@ -59,14 +47,14 @@
       transform: translateX(0);
     }
   }
-  
+
   /**  ---------------
        slideInDown
   */
   [data-cue="slideInDown"], [data-cues="slideInDown"] > * {
     opacity: 0;
   }
-  
+
   @keyframes slideInDown {
     from {
       opacity: 0;
@@ -77,14 +65,14 @@
       transform: translateY(0);
     }
   }
-  
+
   /**  ---------------
        slideInUp
   */
   [data-cue="slideInUp"], [data-cues="slideInUp"] > * {
     opacity: 0;
   }
-  
+
   @keyframes slideInUp {
     from {
       opacity: 0;
@@ -95,14 +83,14 @@
       transform: translateY(0);
     }
   }
-  
+
   /**  ---------------
        zoomIn
   */
   [data-cue="zoomIn"], [data-cues="zoomIn"] > * {
     opacity: 0;
   }
-  
+
   @keyframes zoomIn {
     from {
       opacity: 0;
@@ -113,14 +101,14 @@
       transform: scale(1);
     }
   }
-  
+
   /**  ---------------
        zoomOut
   */
   [data-cue="zoomOut"], [data-cues="zoomOut"] > * {
     opacity: 0;
   }
-  
+
   @keyframes zoomOut {
     from {
       opacity: 0;
@@ -131,14 +119,14 @@
       transform: scale(1);
     }
   }
-  
+
   /**  ---------------
        rotateIn
   */
   [data-cue="rotateIn"], [data-cues="rotateIn"] > * {
     opacity: 0;
   }
-  
+
   @keyframes rotateIn {
     from {
       opacity: 0;
@@ -149,14 +137,14 @@
       transform: rotateZ(0deg);
     }
   }
-  
+
   /**  ---------------
        bounceIn
   */
   [data-cue="bounceIn"], [data-cues="bounceIn"] > * {
     opacity: 0;
   }
-  
+
   @keyframes bounceIn {
     0% {
       transform: scale3d(0.3, 0.3, 0.3);
@@ -179,14 +167,14 @@
       transform: scale3d(1, 1, 1);
     }
   }
-  
+
   /**  ---------------
        bounceInLeft
   */
   [data-cue="bounceInLeft"], [data-cues="bounceInLeft"] > * {
     opacity: 0;
   }
-  
+
   @keyframes bounceInLeft {
     from,
     60%,
@@ -214,14 +202,14 @@
       transform: translate3d(0, 0, 0);
     }
   }
-  
+
   /**  ---------------
        bounceInRight
   */
   [data-cue="bounceInRight"], [data-cues="bounceInRight"] > * {
     opacity: 0;
   }
-  
+
   @keyframes bounceInRight {
     from,
     60%,
@@ -249,14 +237,14 @@
       transform: translate3d(0, 0, 0);
     }
   }
-  
+
   /**  ---------------
        bounceInDown
   */
   [data-cue="bounceInDown"], [data-cues="bounceInDown"] > * {
     opacity: 0;
   }
-  
+
   @keyframes bounceInDown {
     from,
     60%,
@@ -284,14 +272,14 @@
       transform: translate3d(0, 0, 0);
     }
   }
-  
+
   /**  ---------------
        bounceInUp
   */
   [data-cue="bounceInUp"], [data-cues="bounceInUp"] > * {
     opacity: 0;
   }
-  
+
   @keyframes bounceInUp {
     from,
     60%,
@@ -319,7 +307,7 @@
       transform: translate3d(0, 0, 0);
     }
   }
-  
+
   /**  ---------------
        flipInX
   */
@@ -327,7 +315,7 @@
     opacity: 0;
     backface-visibility: visible;
   }
-  
+
   @keyframes flipInX {
     from {
       transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
@@ -350,7 +338,7 @@
       transform: perspective(400px);
     }
   }
-  
+
   /**  ---------------
        flipInY
   */
@@ -358,7 +346,7 @@
     opacity: 0;
     backface-visibility: visible;
   }
-  
+
   @keyframes flipInY {
     from {
       transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
@@ -381,4 +369,3 @@
       transform: perspective(400px);
     }
   }
-  

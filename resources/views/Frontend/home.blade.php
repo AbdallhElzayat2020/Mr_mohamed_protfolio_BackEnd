@@ -6,6 +6,7 @@
 <!-- Start Navbar Area -->
 @include('Frontend.layouts.navbar')
 <!-- End Navbar Area -->
+
 <!-- Start Banner Area -->
 <div class="banner-area">
     <div class="container-fluid">

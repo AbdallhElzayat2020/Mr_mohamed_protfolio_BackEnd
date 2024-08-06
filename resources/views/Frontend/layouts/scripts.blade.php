@@ -7,3 +7,4 @@
 <script src="{{ asset('assets/frontend/assets/js/jquery.magnific.popup.js') }}"></script>
 <script src="{{ asset('assets/frontend/assets/js/custom.js') }}"></script>
 @stack('js')
+@yield('js')

@@ -10,10 +10,77 @@ class HomeController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+
+    public function login()
+    {
+        return view('Frontend.Auth.login');
+    }
+
+    public function handleLogin(Request $request)
+    {
+        $request->authenticate();
+//        toast(__('You have  been login successfully!'), 'success');
+
+        return redirect()->route('admin.dashboard');
+    }
+
+
     public function index()
     {
         return view('Frontend.home');
     }
+
+    public function about()
+    {
+        return view('Frontend.about');
+    }
+
+    public function contact()
+    {
+        return view('Frontend.contact');
+    }
+
+    public function courses()
+    {
+        return view('Frontend.courses');
+    }
+
+    public function courses_details()
+    {
+        return view('Frontend.courses_details');
+    }
+
+    public function services()
+    {
+        return view('Frontend.services');
+    }
+
+    public function services_details()
+    {
+        return view('Frontend.services_details');
+    }
+
+    public function team()
+    {
+        return view('Frontend.team');
+    }
+
+    public function gallery()
+    {
+        return view('Frontend.gallery');
+    }
+
+    public function gallery_details()
+    {
+        return view('Frontend.gallery_details');
+    }
+
+    public function profile()
+    {
+        return view('Frontend.profile');
+    }
+
 
     /**
      * Show the form for creating a new resource.

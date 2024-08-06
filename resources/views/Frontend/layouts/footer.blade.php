@@ -6,7 +6,7 @@
                 <div class="col-lg-4">
                     <div class="single-footer-info ms-0">
                         <a class="text-decoration-none logo" href="index.html">
-                            <img src="assets/images/white-logo.png" alt="logo">
+                            <img src="{{asset('assets/frontend/assets/images/white-logo.png')}}" alt="logo">
                         </a>
                         <p>Cybersecurity is crucial in today's digital age, where many individuals and organizations
                             store a significant amount of sensitive data on computers...</p>
