@@ -13,15 +13,17 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="banner-content">
-                    <div class="title">
-                        <h5 class="text-white">شريكك نحو التطور</h5>
-                        <h1>الاسم هيبقي هنا كدا</h1>
-                        <p>هنا هيبقي نبذة بسيطة كدا سطرين ولا حاجة اقل شئ</p>
-                    </div>
+                    @foreach($banners as $banner)
+                        <div class="title">
+                            <h5 class="text-white">شريكك نحو التطور</h5>
+                            <h1>{{$banner->title}}</h1>
+                            <p>{{$banner->description}}</p>
+                        </div>
+                    @endforeach
                     <div class="banner-button d-flex align-items-center">
                         <a class="demo text-decoration-none" href="contact.html">اعمالي</a>
                         <div style="border: 1px solid var(--whiteColor); border-radius: 6px; padding: 5px 10px "
-                            class="play-btn d-flex align-items-center">
+                             class="play-btn d-flex align-items-center">
                             <a href="#" class="text-decoration-none popup-youtube icon">
                                 <i class="ri-play-mini-fill"></i>
                             </a>
@@ -199,7 +201,7 @@
                         <div class="user d-flex align-items-center">
                             <div class="image">
                                 <img src="{{ asset('assets/frontend/assets/images/testimonial/testimonial-1.jpg') }}"
-                                    alt="testimonial-image">
+                                     alt="testimonial-image">
                             </div>
                             <div class="content">
                                 <h3>Pamela Downs</h3>
@@ -228,7 +230,7 @@
                         <div class="user d-flex align-items-center">
                             <div class="image">
                                 <img src="{{ asset('assets/frontend/assets/images/testimonial/testimonial-1.jpg') }}"
-                                    alt="testimonial-image">
+                                     alt="testimonial-image">
                             </div>
                             <div class="content">
                                 <h3>Larry Shoemaker</h3>
@@ -257,7 +259,7 @@
                         <div class="user d-flex align-items-center">
                             <div class="image">
                                 <img src="{{ asset('assets/frontend/assets/images/testimonial/testimonial-1.jpg') }}"
-                                    alt="testimonial-image">
+                                     alt="testimonial-image">
                             </div>
                             <div class="content">
                                 <h3>Pamela Downs</h3>
@@ -286,7 +288,7 @@
                         <div class="user d-flex align-items-center">
                             <div class="image">
                                 <img src="{{ asset('assets/frontend/assets/images/testimonial/testimonial-1.jpg') }}"
-                                    alt="testimonial-image">
+                                     alt="testimonial-image">
                             </div>
                             <div class="content">
                                 <h3>Larry Shoemaker</h3>
@@ -315,7 +317,7 @@
                         <div class="user d-flex align-items-center">
                             <div class="image">
                                 <img src="{{ asset('assets/frontend/assets/images/testimonial/testimonial-1.jpg') }}"
-                                    alt="testimonial-image">
+                                     alt="testimonial-image">
                             </div>
                             <div class="content">
                                 <h3>Pamela Downs</h3>
@@ -344,7 +346,7 @@
                         <div class="user d-flex align-items-center">
                             <div class="image">
                                 <img src="{{ asset('assets/frontend/assets/images/testimonial/testimonial-1.jpg') }}"
-                                    alt="testimonial-image">
+                                     alt="testimonial-image">
                             </div>
                             <div class="content">
                                 <h3>Larry Shoemaker</h3>
@@ -373,7 +375,7 @@
                         <div class="user d-flex align-items-center">
                             <div class="image">
                                 <img src="{{ asset('assets/frontend/assets/images/testimonial/testimonial-1.jpg') }}"
-                                    alt="testimonial-image">
+                                     alt="testimonial-image">
                             </div>
                             <div class="content">
                                 <h3>Pamela Downs</h3>
@@ -402,7 +404,7 @@
                         <div class="user d-flex align-items-center">
                             <div class="image">
                                 <img src="{{ asset('assets/frontend/assets/images/testimonial/testimonial-1.jpg') }}"
-                                    alt="testimonial-image">
+                                     alt="testimonial-image">
                             </div>
                             <div class="content">
                                 <h3>Larry Shoemaker</h3>
@@ -575,7 +577,7 @@
                     <ul class="list-unstyled ps-0 mb-0">
                         <li>
                             <a class="text-decoration-none text-white"
-                                href="mailto:support@gmail.com">support@gmail.com</a>
+                               href="mailto:support@gmail.com">support@gmail.com</a>
                         </li>
                         <li>
                             <a class="text-decoration-none text-white" href="mailto:info@email.com">info@email.com</a>

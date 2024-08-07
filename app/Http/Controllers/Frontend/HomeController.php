@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin\BannerHome;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -28,7 +29,8 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('Frontend.home');
+        $banners = BannerHome::all();
+        return view('Frontend.home', compact('banners'));
     }
 
     public function about()

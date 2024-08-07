@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\AdminHomePageController;
+use App\Http\Controllers\Admin\BannerHomeController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -13,6 +14,8 @@ Route::group(
     ], function () {
     Route::get('login', [AdminAuthController::class, 'login'])->name('login');
     Route::post('login', [AdminAuthController::class, 'handleLogin'])->name('handle-login');
+    Route::post('logout', [AdminAuthController::class, 'logout'])->name('logout');
+
 });
 
 //Protected Routes
@@ -24,8 +27,7 @@ Route::group(
     ], function () {
     Route::get('dashboard', [AdminHomeController::class, 'index'])->name('dashboard');
 
-    Route::post('logout', [AdminAuthController::class, 'logout'])->name('logout');
 
-    Route::resource('homepage', AdminHomePageController::class);
+    Route::resource('homepage', BannerHomeController::class);
 //Route::
 });
