@@ -24,7 +24,7 @@
                         <a class="demo text-decoration-none" href="{{route('contact')}}">اعمالي</a>
                         <div style="border: 1px solid var(--whiteColor); border-radius: 6px; padding: 5px 10px "
                              class="play-btn d-flex align-items-center">
-                            <a href="#" class="text-decoration-none popup-youtube icon">
+                            <a href="{{route('courses')}}" class="text-decoration-none popup-youtube icon">
                                 <i class="ri-play-mini-fill"></i>
                             </a>
                             <a class="text-decoration-none land-btn popup-youtube" href="{{route('courses')}}">
@@ -69,7 +69,7 @@
         <div class="row align-items-center" data-cue="slideInUp">
             <div class="col-lg-6">
                 <div class="about-image">
-                    <img src="{{ asset('assets/frontend/assets/images/about/about-7.png') }}" alt="about-image">
+                    <img src="{{ asset('assets/frontend/assets/images/Me_1.jpg') }}" alt="about-image">
                 </div>
             </div>
             <div class="col-lg-6">
