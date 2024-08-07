@@ -1,16 +1,16 @@
 @extends('admin.layouts.master')
-@section('title_dashboard', 'Homepage')
+@section('title_dashboard', 'Company Page')
 @section('content')
     <div class="main-content">
         <div class="section">
             <div class="section-header">
-                <h1>الواجهة الرئيسية</h1>
+                <h1>Company Page</h1>
             </div>
             <div class="row">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <a @class(['btn-primary btn']) href="{{route('admin.homepage.create')}}">Create New</a>
+                            <a @class(['btn-primary btn']) href="{{route('admin.company.create')}}">Create New</a>
                         </div>
                         <div class="card-body">
                             @if(session()->has('success'))
@@ -23,29 +23,27 @@
                                     <thead>
                                     <tr>
                                         <th class="text-center">
-                                            #
+                                            #ID
                                         </th>
-                                        <th>الاسم</th>
-                                        <th>الوصف</th>
+                                        <th>الصورة</th>
                                         <th>تاريخ الاضافة</th>
-                                        <th>Action</th>
+                                        <th>صلاحيات</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($banners as $key => $banner )
+                                    @foreach($companies as $key => $company )
                                         <tr>
                                             <td>
                                                 {{$key +1}}
                                             </td>
-                                            <td>{{$banner->title}}</td>
-                                            <td class="align-middle">
-                                                {{$banner->description}}
+                                            <td>
+                                                <img src="{{asset($company->image)}}" alt="" width="70" height="70">
                                             </td>
-                                            <td>{{$banner->created_at}}</td>
+                                            <td>{{$company->created_at}}</td>
                                             <td class="d-flex align-items-center gap-5">
-                                                <a href="{{route('admin.homepage.destroy',$banner->id)}}"
+                                                <a href="{{route('admin.company.destroy',$company->id)}}"
                                                    class="btn btn-danger btn-sm mr-2 delete-item">Delete</a>
-                                                <a href="{{route('admin.homepage.edit',$banner->id)}}"
+                                                <a href="{{route('admin.company.edit',$company->id)}}"
                                                    class="btn btn-primary btn-sm ml-2">Edit</a>
                                             </td>
                                         </tr>

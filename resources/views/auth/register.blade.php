@@ -74,11 +74,23 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <input type="email" value="{{old('email')}}" name="email" class="form-control" placeholder="Your email">
+                    <input type="text" value="{{old('phone')}}" name="phone" class="form-control" placeholder="phone">
+                    @error('phone')
+                    <p @class(['text-white'])>{{$message}}</p>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <input type="text" value="{{old('email')}}" name="email" class="form-control" placeholder="email">
                     @error('email')
                     <p @class(['text-white'])>{{$message}}</p>
                     @enderror
                 </div>
+{{--                <div class="form-group">--}}
+{{--                    <input type="email" value="{{old('email')}}" name="email" class="form-control" placeholder="Your email">--}}
+{{--                    @error('email')--}}
+{{--                    <p @class(['text-white'])>{{$message}}</p>--}}
+{{--                    @enderror--}}
+{{--                </div>--}}
                 <div class="form-group">
                     <input type="password" name="password" class="form-control" placeholder="Your password">
                     @error('password')

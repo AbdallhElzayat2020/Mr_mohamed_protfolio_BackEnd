@@ -21,13 +21,13 @@
                         </div>
                     @endforeach
                     <div class="banner-button d-flex align-items-center">
-                        <a class="demo text-decoration-none" href="contact.html">اعمالي</a>
+                        <a class="demo text-decoration-none" href="{{route('contact')}}">اعمالي</a>
                         <div style="border: 1px solid var(--whiteColor); border-radius: 6px; padding: 5px 10px "
                              class="play-btn d-flex align-items-center">
                             <a href="#" class="text-decoration-none popup-youtube icon">
                                 <i class="ri-play-mini-fill"></i>
                             </a>
-                            <a class="text-decoration-none land-btn popup-youtube" href="#">
+                            <a class="text-decoration-none land-btn popup-youtube" href="{{route('courses')}}">
                                 مشاهدة كورساتي
                             </a>
                         </div>
@@ -41,50 +41,22 @@
             </div>
         </div>
     </div>
-    <div class="shape">
-        <div class="shape-2">
-            <img src="{{ asset('assets/frontend/assets/images/shape/shape-2.png') }}" alt="shape">
-        </div>
-    </div>
+
 </div>
 <!-- End Banner Area -->
 
 <!-- Start Partner Area -->
 <div class="partner-area style-2 pb-75">
     <div class="container">
-        <h1 class="text-center pb-2 text-white">شرركاء النجاح</h1>
+        <h1 class="text-center pb-4 text-white">شركاء النجاح</h1>
         <div class="partner-slider-info" data-cue="slideInUp">
             <div class="partner-slider owl-carousel owl-theme">
-                <div class="single-partner-logo">
-                    <img src="{{ asset('assets/frontend/assets/images/partner/partner-6.png') }}" alt="partner-2">
-                </div>
-                <div class="single-partner-logo">
-                    <img src="{{ asset('assets/frontend/assets/images/partner/partner-6.png') }}" alt="partner-2">
-                </div>
-                <div class="single-partner-logo">
-                    <img src="{{ asset('assets/frontend/assets/images/partner/partner-6.png') }}" alt="partner-2">
-                </div>
-                <div class="single-partner-logo">
-                    <img src="{{ asset('assets/frontend/assets/images/partner/partner-6.png') }}" alt="partner-2">
-                </div>
-                <div class="single-partner-logo">
-                    <img src="{{ asset('assets/frontend/assets/images/partner/partner-6.png') }}" alt="partner-2">
-                </div>
-                <div class="single-partner-logo">
-                    <img src="{{ asset('assets/frontend/assets/images/partner/partner-6.png') }}" alt="partner-2">
-                </div>
-                <div class="single-partner-logo">
-                    <img src="{{ asset('assets/frontend/assets/images/partner/partner-6.png') }}" alt="partner-2">
-                </div>
-                <div class="single-partner-logo">
-                    <img src="{{ asset('assets/frontend/assets/images/partner/partner-6.png') }}" alt="partner-2">
-                </div>
-                <div class="single-partner-logo">
-                    <img src="{{ asset('assets/frontend/assets/images/partner/partner-6.png') }}" alt="partner-2">
-                </div>
-                <div class="single-partner-logo">
-                    <img src="{{ asset('assets/frontend/assets/images/partner/partner-6.png') }}" alt="partner-2">
-                </div>
+                @foreach($companies as $company)
+                    <div class="single-partner-logo">
+                        <img src="{{ asset($company->image) }}" alt="partner-2">
+                    </div>
+                @endforeach
+
             </div>
         </div>
     </div>
@@ -104,8 +76,10 @@
                 <div class="about-content about-style">
                     <div class="title">
                         <span class="d-block">نبذة عني</span>
-                        <h2 class="text-white">الاسم هنا ثلاثس</h2>
-                        <p class="text-white">نبذة بسيطة هنا لا تزيد عن سطرين ايضا</p>
+                        @foreach($banners as $banner)
+                            <h2 class="text-white">{{$banner->title}}</h2>
+                            <p class="text-white">{{$banner->description}}</p>
+                        @endforeach
                     </div>
                     <div class="row">
                         <div class="col-lg-4 col-sm-6">

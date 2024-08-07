@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin\BannerHome;
+use App\Models\Admin\Company;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -29,8 +30,9 @@ class HomeController extends Controller
 
     public function index()
     {
+        $companies = Company::all();
         $banners = BannerHome::all();
-        return view('Frontend.home', compact('banners'));
+        return view('Frontend.home', compact('banners', 'companies'));
     }
 
     public function about()

@@ -40,6 +40,9 @@
                         <li class="nav-item">
                             <a href="{{route('team')}}" class="nav-link">فريق العمل</a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{route('contact')}}" class="nav-link">تواصل معنا</a>
+                        </li>
                         <li class="nav-item dropdown ">
                             @auth
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"

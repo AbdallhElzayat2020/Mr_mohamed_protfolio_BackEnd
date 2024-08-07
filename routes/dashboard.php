@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\AdminHomePageController;
 use App\Http\Controllers\Admin\BannerHomeController;
+use App\Http\Controllers\Admin\CompanyController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -29,5 +30,6 @@ Route::group(
 
 
     Route::resource('homepage', BannerHomeController::class);
-//Route::
+
+    Route::resource('company', CompanyController::class);
 });
