@@ -30,9 +30,13 @@ class BannerHomeController extends Controller
      */
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+        ]);
         $home = new BannerHome();
-        $home->title = $request->title;
-        $home->description = $request->description;
+        $home->title = $validatedData['title'];
+        $home->description = $validatedData['description'];
         $home->save();
         return redirect()->route('admin.homepage.index')->with('success', 'Banner created successfully');
     }
@@ -59,9 +63,14 @@ class BannerHomeController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validatedData = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'nullable|string',
+        ]);
+
         $home = BannerHome::findOrFail($id);
-        $home->title = $request->title;
-        $home->description = $request->description;
+        $home->title = $validatedData['title'];
+        $home->description = $validatedData['description'];
         $home->save();
         return redirect()->route('admin.homepage.index')->with('success', 'Banner Updated successfully');
     }

@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\AdminHomePageController;
 use App\Http\Controllers\Admin\BannerHomeController;
 use App\Http\Controllers\Admin\CompanyController;
+use App\Http\Controllers\Admin\TestimonialController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -32,4 +33,6 @@ Route::group(
     Route::resource('homepage', BannerHomeController::class);
 
     Route::resource('company', CompanyController::class);
+
+    Route::resource('testimonial', TestimonialController::class);
 });

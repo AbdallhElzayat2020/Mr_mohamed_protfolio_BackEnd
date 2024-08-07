@@ -16,6 +16,9 @@
             <li class="dropdown">
                 <a href="{{route('admin.company.index')}}" class="nav-link"><i class="fas fa-building"></i><span>Companies Page</span></a>
             </li>
+            <li class="dropdown">
+                <a href="{{route('admin.testimonial.index')}}" class="nav-link"><i class="fas fa-star"></i><span>testimonial Page</span></a>
+            </li>
         </ul>
     </aside>
 </div>

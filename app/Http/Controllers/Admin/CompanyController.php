@@ -36,7 +36,7 @@ class CompanyController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:6000',
+            'image' => ['required', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:6000'],
         ]);
 
         $imgPath = $this->handleFileUpload($request, 'image');
@@ -72,17 +72,21 @@ class CompanyController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
+        $validatedData = $request->validate([
+            'image' => ['image', 'mimes:jpeg,png,jpg,gif,svg', 'max:6000'],
+        ]);
         $company = Company::findOrFail($id);
         if ($request->hasFile('image')) {
-            $this->deleteFile($company->image);
+            if ($company->image) {
+                $this->deleteFile($company->image);
+            }
             $imgPath = $this->handleFileUpload($request, 'image');
             $company->image = $imgPath;
         }
         $company->save();
         return redirect()->route('admin.company.index')->with('success', 'تم تعديل لوجو الشركة بنجاح!');
-
     }
 
     /**

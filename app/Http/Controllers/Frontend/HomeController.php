@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\BannerHome;
 use App\Models\Admin\Company;
+use App\Models\Admin\Testimonial;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,11 +15,6 @@ class HomeController extends Controller
      */
 
 
-    public function login()
-    {
-        return view('Frontend.Auth.login');
-    }
-
     public function handleLogin(Request $request)
     {
         $request->authenticate();
@@ -27,12 +23,12 @@ class HomeController extends Controller
         return redirect()->route('admin.dashboard');
     }
 
-
     public function index()
     {
         $companies = Company::all();
         $banners = BannerHome::all();
-        return view('Frontend.home', compact('banners', 'companies'));
+        $testimonials = Testimonial::all();
+        return view('Frontend.home', compact('banners', 'companies', 'testimonials'));
     }
 
     public function about()
