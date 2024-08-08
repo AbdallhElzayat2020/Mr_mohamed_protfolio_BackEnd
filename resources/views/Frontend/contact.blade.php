@@ -61,31 +61,40 @@
             <h2 class="text-white">تواصل معنا</h2>
         </div>
         <div class="contact-form-info" data-cue="slideInUp">
-            <form>
+            @if(session()->has('success'))
+                <div class="alert alert-success">
+                    {{session()->get('success')}}
+                </div>
+            @endif
+            <form action="{{route('orders')}}" method="post">
+                @csrf
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Name">
+                            <input type="text" name="name" class="form-control" placeholder="Name">
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email">
+                            <input type="email" name="email" class="form-control" placeholder="Email">
                         </div>
                     </div>
+
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Phone">
+                            <input type="text" name="phone" class="form-control" placeholder="phone">
                         </div>
                     </div>
+
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Subject">
+                            <input type="text" name="subject" class="form-control" placeholder="subject">
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control textarea" placeholder="Enter Your Comments" rows="3"></textarea>
+                    <textarea class="form-control textarea" name="message" placeholder="Enter Your Comments"
+                              rows="3"></textarea>
                 </div>
                 <button class="btn-primary" type="submit">Send A Message</button>
             </form>

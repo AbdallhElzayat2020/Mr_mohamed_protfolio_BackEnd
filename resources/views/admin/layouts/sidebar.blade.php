@@ -10,6 +10,9 @@
                         class="fas fa-fire"></i><span>Dashboard</span></a>
             </li>
             <li class="dropdown">
+                <a href="{{route('admin.users')}}" class="nav-link"><i class="fas fa-sort-amount-up"></i><span>Users Page</span></a>
+            </li>
+            <li class="dropdown">
                 <a href="{{route('admin.homepage.index')}}" class="nav-link"><i
                         class="fas fa-home"></i><span>Home Page</span></a>
             </li>
@@ -19,6 +22,13 @@
             <li class="dropdown">
                 <a href="{{route('admin.testimonial.index')}}" class="nav-link"><i class="fas fa-star"></i><span>testimonial Page</span></a>
             </li>
+            <li class="dropdown">
+                <a href="{{route('admin.orders.index')}}" class="nav-link"><i class="fas fa-sort-amount-up"></i><span>Orders Page</span></a>
+            </li>
+            <li class="dropdown">
+                <a href="{{route('admin.services.index')}}" class="nav-link"><i class="fas fa-tasks"></i></i><span>services Page</span></a>
+            </li>
+
         </ul>
     </aside>
 </div>

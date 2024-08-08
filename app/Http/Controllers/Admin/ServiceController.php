@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Admin\Testimonial;
+use App\Models\Admin\Service;
 use App\traits\FileUploadTrait;
 use Illuminate\Http\Request;
 
-class TestimonialController extends Controller
+class ServiceController extends Controller
 {
     use FileUploadTrait;
 
@@ -16,8 +16,8 @@ class TestimonialController extends Controller
      */
     public function index()
     {
-        $testimonials = Testimonial::all();
-        return view('admin.testimonial.index', compact('testimonials'));
+        $services = Service::all();
+        return view('admin.services.index', compact('services'));
     }
 
     /**
@@ -25,7 +25,7 @@ class TestimonialController extends Controller
      */
     public function create()
     {
-        return view('admin.testimonial.create');
+        return view('admin.services.create');
     }
 
     /**
@@ -35,30 +35,29 @@ class TestimonialController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
-            'nickname' => 'required|string|max:255',
             'description' => 'required|string',
             'image' => ['required', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:6000'],
         ]);
 
         $imgPath = $this->handleFileUpload($request, 'image');
 
-        $testimonial = new Testimonial();
-        $testimonial->name = $validatedData['name'];
-        $testimonial->nickname = $validatedData['nickname'];
-        $testimonial->description = $validatedData['description'];
+        $services = new Service();
+        $services->name = $validatedData['name'];
+        $services->description = $validatedData['description'];
         if ($imgPath) {
-            $testimonial->image = $imgPath;
+            $services->image = $imgPath;
         }
 
-        $testimonial->save();
+        $services->save();
 
-        return redirect()->route('admin.testimonial.index')->with('success', 'تم إضافة رأي العميل بنجاح');
+        return redirect()->route('admin.services.index')->with('success', 'تم إضافة  الخدمة بنجاح');
+
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Testimonial $testimonial)
+    public function show(Service $service)
     {
         //
     }
@@ -66,10 +65,10 @@ class TestimonialController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id)
+    public function edit(Service $service)
     {
-        $testimonial = Testimonial::findOrFail($id);
-        return view('admin.testimonial.edit', compact('testimonial'));
+        $service = Service::findOrFail($service->id);
+        return view('admin.services.edit', compact('service'));
     }
 
     /**
@@ -80,22 +79,20 @@ class TestimonialController extends Controller
         $validatedData = $request->validate([
             'image' => ['image', 'mimes:jpeg,png,jpg,gif,svg', 'max:6000'],
             'name' => 'required|string|max:255',
-            'nickname' => 'required|string|max:255',
             'description' => 'required|string',
         ]);
-        $testimonial = Testimonial::findOrFail($id);
+        $service = Service::findOrFail($id);
         if ($request->hasFile('image')) {
-            if ($testimonial->image) {
-                $this->deleteFile($testimonial->image);
+            if ($service->image) {
+                $this->deleteFile($service->image);
             }
             $imgPath = $this->handleFileUpload($request, 'image');
-            $testimonial->image = $imgPath;
+            $service->image = $imgPath;
         }
-        $testimonial->name = $validatedData['name'];
-        $testimonial->nickname = $validatedData['nickname'];
-        $testimonial->description = $validatedData['description'];
-        $testimonial->save();
-        return redirect()->route('admin.testimonial.index')->with('success', 'تم تعديل الراي  بنجاح!');
+        $service->name = $validatedData['name'];
+        $service->description = $validatedData['description'];
+        $service->save();
+        return redirect()->route('admin.services.index')->with('success', 'تم تعديل الراي  بنجاح!');
     }
 
     /**
@@ -103,9 +100,9 @@ class TestimonialController extends Controller
      */
     public function destroy($id)
     {
-        $testimonial = Testimonial::findOrFail($id);
-        $this->deleteFile($testimonial->image);
-        $testimonial->delete();
+        $service = Service::findOrFail($id);
+        $this->deleteFile($service->image);
+        $service->delete();
         return response(['status' => 'success', 'message' => 'Deleted successfully']);
     }
 }

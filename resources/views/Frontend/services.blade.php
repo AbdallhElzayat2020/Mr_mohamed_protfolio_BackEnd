@@ -7,8 +7,6 @@
 @include('Frontend.layouts.navbar')
 <!-- End Navbar Area -->
 
-
-
 <!-- Start Page Title Area -->
 <div class="page-title-area" style="background-color: var(--primaryColor)">
     <div class="container">
@@ -23,65 +21,30 @@
 <div class="security-area services-style" style="background-color: var(--primaryColor)">
     <div class="container-fluid">
         <div class="row" data-cue="slideInUp">
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-security-info">
-                    <div class="date">
-                        01
+            @foreach($services as $key => $service)
+                <div class="col-lg-3 col-sm-6 mt-5">
+                    <div class="single-security-info">
+                        <div class="date">
+                            {{$key+1}}
+                        </div>
+                        <h3>
+                            <a class="text-decoration-none"
+                               href="{{route('services-details',$service->id)}}">
+                                {{ \Illuminate\Support\Str::limit($service->name, 20, '.......') }}
+                            </a>
+                        </h3>
+                        <p>
+                            {{ \Illuminate\Support\Str::limit($service->description, 50, '......') }}
+                        </p>
+                        <a class="read-more text-decoration-none" href="{{route('services-details',$service->id)}}">
+                            Read More
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
                     </div>
-                    <h3>
-                        <a class="text-decoration-none" href="{{route('services-details')}}">Security Management</a>
-                    </h3>
-                    <p>The Imperative of Cybersecurity in an Interconnected World.</p>
-                    <a class="read-more text-decoration-none" href="{{route('services-details')}}">
-                        Read More
-                        <i class="ri-arrow-right-line"></i>
-                    </a>
                 </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-security-info">
-                    <div class="date">
-                        02
-                    </div>
-                    <h3>
-                        <a class="text-decoration-none" href="{{route('services-details')}}">Data Privacy</a>
-                    </h3>
-                    <p>The Imperative of Cybersecurity in an Interconnected World.</p>
-                    <a class="read-more text-decoration-none" href="{{route('services-details')}}">
-                        Read More
-                        <i class="ri-arrow-right-line"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-security-info">
-                    <div class="date">
-                        03
-                    </div>
-                    <h3>
-                        <a class="text-decoration-none" href="{{route('services-details')}}">Network Security</a>
-                    </h3>
-                    <p>The Imperative of Cybersecurity in an Interconnected World.</p>
-                    <a class="read-more text-decoration-none" href="{{route('services-details')}}">
-                        Read More
-                        <i class="ri-arrow-right-line"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-security-info">
-                    <div class="date">
-                        04
-                    </div>
-                    <h3>
-                        <a class="text-decoration-none" href="{{route('services-details')}}">DDOS Protection</a>
-                    </h3>
-                    <p>The Imperative of Cybersecurity in an Interconnected World.</p>
-                    <a class="read-more text-decoration-none" href="{{route('services-details')}}">
-                        Read More
-                        <i class="ri-arrow-right-line"></i>
-                    </a>
-                </div>
+            @endforeach
+            <div class="pagination">
+                {{ $services->links() }}
             </div>
         </div>
     </div>
@@ -95,30 +58,11 @@
         <h1 class="text-center py-2 text-white">شرركاء النجاح</h1>
         <div class="partner-slider-info" data-cue="slideInUp">
             <div class="partner-slider owl-carousel owl-theme">
-                <div class="single-partner-logo">
-                    <img src="{{ asset('assets/frontend/assets/images/partner/partner-6.png') }}" alt="partner-2">
-                </div>
-                <div class="single-partner-logo">
-                    <img src="{{ asset('assets/frontend/assets/images/partner/partner-6.png') }}" alt="partner-2">
-                </div>
-                <div class="single-partner-logo">
-                    <img src="{{ asset('assets/frontend/assets/images/partner/partner-6.png') }}" alt="partner-2">
-                </div>
-                <div class="single-partner-logo">
-                    <img src="{{ asset('assets/frontend/assets/images/partner/partner-6.png') }}" alt="partner-2">
-                </div>
-                <div class="single-partner-logo">
-                    <img src="{{ asset('assets/frontend/assets/images/partner/partner-6.png') }}" alt="partner-2">
-                </div>
-                <div class="single-partner-logo">
-                    <img src="{{ asset('assets/frontend/assets/images/partner/partner-6.png') }}" alt="partner-2">
-                </div>
-                <div class="single-partner-logo">
-                    <img src="{{ asset('assets/frontend/assets/images/partner/partner-6.png') }}" alt="partner-2">
-                </div>
-                <div class="single-partner-logo">
-                    <img src="{{ asset('assets/frontend/assets/images/partner/partner-6.png') }}" alt="partner-2">
-                </div>
+                @foreach($companies as $company)
+                    <div class="single-partner-logo">
+                        <img src="{{ asset($company->image) }}" alt="partner-2">
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -126,237 +70,43 @@
 <!-- End Partner Area -->
 
 <!-- Start Testimonial Area -->
-<div class="testimonial-area pt-100 pb-75">
+<div class="testimonial-area ">
     <div class="container">
         <div class="section-title text-center" data-cue="slideInUp">
             <h2 class="text-white">اراء عملاءنا</h2>
         </div>
         <div class="testimonial-slider-info" data-cue="slideInUp">
             <div class="testimonial-slider owl-carousel owl-theme">
-                <div class="single-testimonial-card">
-                    <div class="testimonial-user d-flex align-items-center justify-content-between">
-                        <div class="user d-flex align-items-center">
-                            <div class="image">
-                                <img src="{{asset('assets/frontend/assets/images/testimonial/testimonial-1.jpg')}}"
-                                     alt="testimonial-image">
+                @foreach($testimonials as $testimonial)
+                    <div class="single-testimonial-card">
+                        <div class="testimonial-user d-flex align-items-center justify-content-between">
+                            <div class="user d-flex align-items-center">
+                                <div class="image">
+                                    <img
+                                        src="{{ asset($testimonial->image) }}"
+                                        alt="testimonial-image">
+                                </div>
+                                <div class="content">
+                                    <h3>{{$testimonial->name}}</h3>
+                                    <span>{{$testimonial->nickname}}</span>
+                                </div>
                             </div>
-                            <div class="content">
-                                <h3>Pamela Downs</h3>
-                                <span>Developer</span>
+                            <div class="star-icon">
+                                <ul class="list-unstyled ps-0 mb-0">
+                                    <li><i class="ri-star-fill"></i></li>
+                                    <li><i class="ri-star-fill"></i></li>
+                                    <li><i class="ri-star-fill"></i></li>
+                                    <li><i class="ri-star-fill"></i></li>
+                                    <li><i class="ri-star-fill"></i></li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="star-icon">
-                            <ul class="list-unstyled ps-0 mb-0">
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-line"></i></li>
-                            </ul>
-                        </div>
+                        <p style="color: var(--primaryColor)">
+                            “{{$testimonial->description}}“
+                        </p>
                     </div>
-                    <p style="color: var(--primaryColor)">“This involves outsourcing some or all of a company's safety
-                        potency
-                        to a service provider. Services may include security monitoring, incident
-                        response, and managing security devices and systems. And how to
-                        respond to security incidents."</p>
-                </div>
-                <div class="single-testimonial-card">
-                    <div class="testimonial-user d-flex align-items-center justify-content-between">
-                        <div class="user d-flex align-items-center">
-                            <div class="image">
-                                <img src="{{asset('assets/frontend/assets/images/testimonial/testimonial-1.jpg')}}"
-                                     alt="testimonial-image">
-                            </div>
-                            <div class="content">
-                                <h3>Larry Shoemaker</h3>
-                                <span>CEO & Founder</span>
-                            </div>
-                        </div>
-                        <div class="star-icon">
-                            <ul class="list-unstyled ps-0 mb-0">
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-line"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <p style="color: var(--primaryColor)">“This involves outsourcing some or all of a company's safety
-                        potency
-                        to a service provider. Services may include security monitoring, incident
-                        response, and managing security devices and systems. And how to
-                        respond to security incidents."</p>
-                </div>
-                <div class="single-testimonial-card">
-                    <div class="testimonial-user d-flex align-items-center justify-content-between">
-                        <div class="user d-flex align-items-center">
-                            <div class="image">
-                                <img src="{{asset('assets/frontend/assets/images/testimonial/testimonial-1.jpg')}}"
-                                     alt="testimonial-image">
-                            </div>
-                            <div class="content">
-                                <h3>Pamela Downs</h3>
-                                <span>Developer</span>
-                            </div>
-                        </div>
-                        <div class="star-icon">
-                            <ul class="list-unstyled ps-0 mb-0">
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-line"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <p style="color: var(--primaryColor)">“This involves outsourcing some or all of a company's safety
-                        potency
-                        to a service provider. Services may include security monitoring, incident
-                        response, and managing security devices and systems. And how to
-                        respond to security incidents."</p>
-                </div>
-                <div class="single-testimonial-card">
-                    <div class="testimonial-user d-flex align-items-center justify-content-between">
-                        <div class="user d-flex align-items-center">
-                            <div class="image">
-                                <img src="{{asset('assets/frontend/assets/images/testimonial/testimonial-1.jpg')}}"
-                                     alt="testimonial-image">
-                            </div>
-                            <div class="content">
-                                <h3>Larry Shoemaker</h3>
-                                <span>CEO & Founder</span>
-                            </div>
-                        </div>
-                        <div class="star-icon">
-                            <ul class="list-unstyled ps-0 mb-0">
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-line"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <p style="color: var(--primaryColor)">“This involves outsourcing some or all of a company's safety
-                        potency
-                        to a service provider. Services may include security monitoring, incident
-                        response, and managing security devices and systems. And how to
-                        respond to security incidents."</p>
-                </div>
-                <div class="single-testimonial-card">
-                    <div class="testimonial-user d-flex align-items-center justify-content-between">
-                        <div class="user d-flex align-items-center">
-                            <div class="image">
-                                <img src="{{asset('assets/frontend/assets/images/testimonial/testimonial-1.jpg')}}"
-                                     alt="testimonial-image">
-                            </div>
-                            <div class="content">
-                                <h3>Pamela Downs</h3>
-                                <span>Developer</span>
-                            </div>
-                        </div>
-                        <div class="star-icon">
-                            <ul class="list-unstyled ps-0 mb-0">
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-line"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <p style="color: var(--primaryColor)">“This involves outsourcing some or all of a company's safety
-                        potency
-                        to a service provider. Services may include security monitoring, incident
-                        response, and managing security devices and systems. And how to
-                        respond to security incidents."</p>
-                </div>
-                <div class="single-testimonial-card">
-                    <div class="testimonial-user d-flex align-items-center justify-content-between">
-                        <div class="user d-flex align-items-center">
-                            <div class="image">
-                                <img src="{{asset('assets/frontend/assets/images/testimonial/testimonial-1.jpg')}}"
-                                     alt="testimonial-image">
-                            </div>
-                            <div class="content">
-                                <h3>Larry Shoemaker</h3>
-                                <span>CEO & Founder</span>
-                            </div>
-                        </div>
-                        <div class="star-icon">
-                            <ul class="list-unstyled ps-0 mb-0">
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-line"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <p style="color: var(--primaryColor)">“This involves outsourcing some or all of a company's safety
-                        potency
-                        to a service provider. Services may include security monitoring, incident
-                        response, and managing security devices and systems. And how to
-                        respond to security incidents."</p>
-                </div>
-                <div class="single-testimonial-card">
-                    <div class="testimonial-user d-flex align-items-center justify-content-between">
-                        <div class="user d-flex align-items-center">
-                            <div class="image">
-                                <img src="{{asset('assets/frontend/assets/images/testimonial/testimonial-1.jpg')}}"
-                                     alt="testimonial-image">
-                            </div>
-                            <div class="content">
-                                <h3>Pamela Downs</h3>
-                                <span>Developer</span>
-                            </div>
-                        </div>
-                        <div class="star-icon">
-                            <ul class="list-unstyled ps-0 mb-0">
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-line"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <p style="color: var(--primaryColor)">“This involves outsourcing some or all of a company's safety
-                        potency
-                        to a service provider. Services may include security monitoring, incident
-                        response, and managing security devices and systems. And how to
-                        respond to security incidents."</p>
-                </div>
-                <div class="single-testimonial-card">
-                    <div class="testimonial-user d-flex align-items-center justify-content-between">
-                        <div class="user d-flex align-items-center">
-                            <div class="image">
-                                <img src="{{asset('assets/frontend/assets/images/testimonial/testimonial-1.jpg')}}"
-                                     alt="testimonial-image">
-                            </div>
-                            <div class="content">
-                                <h3>Larry Shoemaker</h3>
-                                <span>CEO & Founder</span>
-                            </div>
-                        </div>
-                        <div class="star-icon">
-                            <ul class="list-unstyled ps-0 mb-0">
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-line"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <p style="color: var(--primaryColor)">“This involves outsourcing some or all of a company's safety
-                        potency
-                        to a service provider. Services may include security monitoring, incident
-                        response, and managing security devices and systems. And how to
-                        respond to security incidents."</p>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </div>
@@ -419,36 +169,46 @@
             <h2 class="text-white">تواصل معنا</h2>
         </div>
         <div class="contact-form-info" data-cue="slideInUp">
-            <form>
+            @if(session()->has('success'))
+                <div class="alert alert-success">
+                    {{session()->get('success')}}
+                </div>
+            @endif
+            <form action="{{route('orders')}}" method="post">
+                @csrf
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Name">
+                            <input type="text" name="name" class="form-control" placeholder="Name">
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email">
+                            <input type="email" name="email" class="form-control" placeholder="Email">
                         </div>
                     </div>
+
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Phone">
+                            <input type="text" name="phone" class="form-control" placeholder="phone">
                         </div>
                     </div>
+
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Subject">
+                            <input type="text" name="subject" class="form-control" placeholder="subject">
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control textarea" placeholder="Enter Your Comments" rows="3"></textarea>
+                    <textarea class="form-control textarea" name="message" placeholder="Enter Your Comments"
+                              rows="3"></textarea>
                 </div>
                 <button class="btn-primary" type="submit">Send A Message</button>
             </form>
         </div>
     </div>
 </div>
+
 <!-- End Contact Form Area -->
 

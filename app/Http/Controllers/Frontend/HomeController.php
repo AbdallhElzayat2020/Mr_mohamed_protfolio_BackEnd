@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\BannerHome;
 use App\Models\Admin\Company;
+use App\Models\Admin\Service;
 use App\Models\Admin\Testimonial;
 use Illuminate\Http\Request;
 
@@ -53,12 +54,24 @@ class HomeController extends Controller
 
     public function services()
     {
-        return view('Frontend.services');
+//        $service = Service::findOrFail($id);
+
+        $companies = Company::all();
+        $services = Service::paginate(4);
+        $testimonials = Testimonial::all();
+
+        return view('Frontend.services', compact('testimonials', 'companies', 'services'));
     }
 
-    public function services_details()
+    public function services_details($id)
     {
-        return view('Frontend.services_details');
+        // جلب الخدمة باستخدام معرف الخدمة
+        $service = Service::findOrFail($id);
+        // جلب جميع الخدمات لعرضها في القائمة الجانبية مثلاً
+        $services = Service::paginate(4);
+
+        // عرض صفحة تفاصيل الخدمة وتمرير البيانات لها
+        return view('Frontend.services_details', compact('service', 'services'));
     }
 
     public function team()
