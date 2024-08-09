@@ -13,7 +13,7 @@
             <div class="col-lg-4">
                 <div class="services-details-left-sidebar">
                     <div class="single-pages-widget services" data-cue="slideInUp">
-                        <h3>كل الخدمات</h3>
+                        <h3>خدمات اخري</h3>
                         <ul class="list-unstyled ps-0 mb-0">
                             @foreach ($services as $key => $serviceItem)
                                 <li>
@@ -63,7 +63,7 @@
                             </div>
                         </div>
                     @endforeach
-                    <div class="pagination mx-auto">
+                    <div class="pagination d-flex align-items-center justify-content-center" style="margin: 10px auto">
                         {{ $services->links() }}
                     </div>
                 </div>

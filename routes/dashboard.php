@@ -5,7 +5,9 @@ use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\AdminOrderController;
 use App\Http\Controllers\Admin\BannerHomeController;
 use App\Http\Controllers\Admin\CompanyController;
+use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\UsersController;
 use Illuminate\Support\Facades\Route;
@@ -42,6 +44,10 @@ Route::group(
     Route::get('users', [UsersController::class, 'index'])->name('users');
 
     Route::resource('services', ServiceController::class);
+
+    Route::resource('team', TeamController::class);
+
+    Route::resource('gallery', GalleryController::class);
 
 
 });

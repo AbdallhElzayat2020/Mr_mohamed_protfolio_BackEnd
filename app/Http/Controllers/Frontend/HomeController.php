@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\BannerHome;
 use App\Models\Admin\Company;
+use App\Models\Admin\Gallery;
 use App\Models\Admin\Service;
+use App\Models\Admin\Team;
 use App\Models\Admin\Testimonial;
 use Illuminate\Http\Request;
 
@@ -65,28 +67,31 @@ class HomeController extends Controller
 
     public function services_details($id)
     {
-        // جلب الخدمة باستخدام معرف الخدمة
         $service = Service::findOrFail($id);
-        // جلب جميع الخدمات لعرضها في القائمة الجانبية مثلاً
+
         $services = Service::paginate(4);
 
-        // عرض صفحة تفاصيل الخدمة وتمرير البيانات لها
         return view('Frontend.services_details', compact('service', 'services'));
-    }
-
-    public function team()
-    {
-        return view('Frontend.team');
     }
 
     public function gallery()
     {
-        return view('Frontend.gallery');
+        $galleries = Gallery::paginate(8);
+        return view('Frontend.gallery', compact('galleries'));
     }
 
-    public function gallery_details()
+    public function gallery_details($id)
     {
-        return view('Frontend.gallery_details');
+        $gallery = Gallery::findOrFail($id);
+
+        $galleries = Gallery::paginate(4);
+        return view('Frontend.gallery_details', compact('gallery', 'galleries'));
+    }
+
+    public function team()
+    {
+        $team = Team::paginate(4);
+        return view('Frontend.team', compact('team'));
     }
 
     public function profile()

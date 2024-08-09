@@ -43,7 +43,7 @@
                     </div>
                 </div>
             @endforeach
-            <div class="pagination">
+            <div class="pagination d-flex align-items-center justify-content-center" style="margin: 10px auto">
                 {{ $services->links() }}
             </div>
         </div>

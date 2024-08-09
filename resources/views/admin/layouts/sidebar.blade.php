@@ -26,7 +26,14 @@
                 <a href="{{route('admin.orders.index')}}" class="nav-link"><i class="fas fa-sort-amount-up"></i><span>Orders Page</span></a>
             </li>
             <li class="dropdown">
-                <a href="{{route('admin.services.index')}}" class="nav-link"><i class="fas fa-tasks"></i></i><span>services Page</span></a>
+                <a href="{{route('admin.services.index')}}" class="nav-link"><i class="fas fa-tasks"></i><span>services Page</span></a>
+            </li>
+            <li class="dropdown">
+                <a href="{{route('admin.team.index')}}" class="nav-link"><i class="fas fa-people-carry"></i><span>Team Page</span></a>
+            </li>
+
+            <li class="dropdown">
+                <a href="{{route('admin.gallery.index')}}" class="nav-link"><i class="fas fa-th-large"></i><span>Gallery Page</span></a>
             </li>
 
         </ul>

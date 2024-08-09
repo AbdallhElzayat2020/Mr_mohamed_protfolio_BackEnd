@@ -1,6 +1,6 @@
 @extends('Frontend.layouts.master')
 
-@section('front_title', 'HomePage')
+@section('front_title', 'Gallery Page')
 
 
 <!-- Start Navbar Area -->
@@ -14,107 +14,33 @@
             <h2 class="text-white">معرض الاعمال</h2>
         </div>
         <div class="row justify-content-center" data-cues="fadeIn">
-            <div class="col-lg-4 col-md-6">
-                <div class="single-blog-card style-3 blog-style">
-                    <div class="image">
-                        <a href="">
-                            <img src="{{asset('assets/frontend/assets/images/blog/blog-13.jpg')}}" alt="blog-image">
-                        </a>
-                    </div>
-                    <div class="content">
-                        <h3>
-                            <a class="text-decoration-none" href="{{route('gallery-details')}}">Empowering Your Digital Defense
-                                with
-                                Comprehensive Cybersecurity.</a>
-                        </h3>
-                        <a class="read-more text-white text-decoration-none" href="{{route('gallery-details')}}">
-                            Read More
-                            <i class="ri-arrow-right-line text-white"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-blog-card style-3 blog-style">
-                    <div class="image">
-                        <a href="">
-                            <img src="{{asset('assets/frontend/assets/images/blog/blog-13.jpg')}}" alt="blog-image">
-                        </a>
-                    </div>
-                    <div class="content">
-                        <h3>
-                            <a class="text-decoration-none" href="{{route('gallery-details')}}">Empowering Your Digital Defense
-                                with
-                                Comprehensive Cybersecurity.</a>
-                        </h3>
-                        <a class="read-more text-white text-decoration-none" href="{{route('gallery-details')}}">
-                            Read More
-                            <i class="ri-arrow-right-line text-white"></i>
-                        </a>
+            @foreach($galleries as $key=> $gallery)
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-blog-card style-3 blog-style">
+                        <div class="image">
+                            <a href="{{route('gallery-details',$gallery->id)}}">
+                                <img style="height: 300px!important; width: 100%; max-width: 100%" src="{{asset($gallery->image)}}" alt="blog-image">
+                            </a>
+                        </div>
+                        <div class="content">
+                            <h3>
+                                <a class="text-decoration-none"
+                                   href="{{route('gallery-details',$gallery->id)}}">
+                                    {{ \Illuminate\Support\Str::limit($gallery->name, 20, '.......') }}
+                                </a>
+                            </h3>
+                            <p>
+                                {{ \Illuminate\Support\Str::limit($gallery->description, 50, '......') }}
+                            </p>
+                            <a class="read-more text-white text-decoration-none"
+                               href="{{route('gallery-details',$gallery->id)}}">
+                                Read More
+                                <i class="ri-arrow-right-line text-white"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-blog-card style-3 blog-style">
-                    <div class="image">
-                        <a href="">
-                            <img src="{{asset('assets/frontend/assets/images/blog/blog-13.jpg')}}" alt="blog-image">
-                        </a>
-                    </div>
-                    <div class="content">
-                        <h3>
-                            <a class="text-decoration-none" href="{{route('gallery-details')}}">Empowering Your Digital Defense
-                                with
-                                Comprehensive Cybersecurity.</a>
-                        </h3>
-                        <a class="read-more text-white text-decoration-none" href="{{route('gallery-details')}}">
-                            Read More
-                            <i class="ri-arrow-right-line text-white"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-blog-card style-3 blog-style">
-                    <div class="image">
-                        <a href="">
-                            <img src="{{asset('assets/frontend/assets/images/blog/blog-13.jpg')}}" alt="blog-image">
-                        </a>
-                    </div>
-                    <div class="content">
-                        <h3>
-                            <a class="text-decoration-none" href="{{route('gallery-details')}}">Empowering Your Digital Defense
-                                with
-                                Comprehensive Cybersecurity.</a>
-                        </h3>
-                        <a class="read-more text-white text-decoration-none" href="{{route('gallery-details')}}">
-                            Read More
-                            <i class="ri-arrow-right-line text-white"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-blog-card style-3 blog-style">
-                    <div class="image">
-                        <a href="">
-                            <img src="{{asset('assets/frontend/assets/images/blog/blog-13.jpg')}}" alt="blog-image">
-                        </a>
-                    </div>
-                    <div class="content">
-                        <h3>
-                            <a class="text-decoration-none" href="{{route('gallery-details')}}">Empowering Your Digital Defense
-                                with
-                                Comprehensive Cybersecurity.</a>
-                        </h3>
-                        <a class="read-more text-white text-decoration-none" href="{{route('gallery-details')}}">
-                            Read More
-                            <i class="ri-arrow-right-line text-white"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
+            @endforeach
 
         </div>
     </div>
