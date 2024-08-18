@@ -4,6 +4,7 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\LandPage_1Controller;
 use App\Http\Controllers\Frontend\LandPage_2Controller;
 use App\Http\Controllers\Frontend\OrderController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
