@@ -19,7 +19,8 @@
                     <div class="single-blog-card style-3 blog-style">
                         <div class="image">
                             <a href="{{route('gallery-details',$gallery->id)}}">
-                                <img style="height: 300px!important; width: 100%; max-width: 100%" src="{{asset($gallery->image)}}" alt="blog-image">
+                                <img style="height: 300px!important; width: 100%; max-width: 100%"
+                                     src="{{asset($gallery->image)}}" alt="blog-image">
                             </a>
                         </div>
                         <div class="content">
@@ -42,6 +43,9 @@
                 </div>
             @endforeach
 
+        </div>
+        <div class="d-flex justify-content-center align-items-center">
+            {{$galleries->links()}}
         </div>
     </div>
 </div>

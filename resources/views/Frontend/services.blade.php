@@ -17,7 +17,7 @@
 </div>
 <!-- End Page Title Area -->
 
-<!-- Start Security Area -->
+<!-- Start services Area -->
 <div class="security-area services-style" style="background-color: var(--primaryColor)">
     <div class="container-fluid">
         <div class="row" data-cue="slideInUp">
@@ -49,7 +49,7 @@
         </div>
     </div>
 </div>
-<!-- End Security Area -->
+<!-- End Services Area -->
 
 
 <!-- Start Partner Area -->

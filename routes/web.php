@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\LandPage_1Controller;
+use App\Http\Controllers\Frontend\LandPage_2Controller;
 use App\Http\Controllers\Frontend\OrderController;
 use Illuminate\Support\Facades\Route;
 
@@ -42,6 +43,8 @@ Route::post('/orders', [OrderController::class, 'store'])->name('orders');
 
 //LandPages Routes
 Route::get('/land-page-1', [LandPage_1Controller::class, 'index'])->name('land-page-1');
+
+Route::get('/land-page-2', [LandPage_2Controller::class, 'index'])->name('land-page-2');
 
 
 
