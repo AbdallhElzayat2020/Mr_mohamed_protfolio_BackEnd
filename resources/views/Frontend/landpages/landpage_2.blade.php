@@ -2,8 +2,8 @@
 <html lang="ar" dir="rtl">
 <head>
     @include('Frontend.layouts.head')
-
     @section('front_title', 'LandPage_2')
+{{--<title>LandPage_2</title>--}}
 </head>
 <body style="background-color: var(--primaryColor); margin-top: 20px">
 <div class="text-top mt-5">

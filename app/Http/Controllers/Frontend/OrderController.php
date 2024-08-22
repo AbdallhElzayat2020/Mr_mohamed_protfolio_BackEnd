@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\OrderRequest;
 use App\Models\Admin\Order;
-use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
@@ -12,7 +12,7 @@ class OrderController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(OrderRequest $request)
     {
         $order = new Order();
         $order->name = $request->name;
@@ -23,5 +23,4 @@ class OrderController extends Controller
         $order->save();
         return redirect()->back()->with('success', 'تم تقديم الطلب وسيتم التواصل معك في خلال 24 ساعة ');
     }
-
 }

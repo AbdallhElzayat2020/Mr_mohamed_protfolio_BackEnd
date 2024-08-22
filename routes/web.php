@@ -3,6 +3,7 @@
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\LandPage_1Controller;
 use App\Http\Controllers\Frontend\LandPage_2Controller;
+use App\Http\Controllers\Frontend\LandPage_3Controller;
 use App\Http\Controllers\Frontend\OrderController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -47,8 +48,7 @@ Route::get('/land-page-1', [LandPage_1Controller::class, 'index'])->name('land-p
 
 Route::get('/land-page-2', [LandPage_2Controller::class, 'index'])->name('land-page-2');
 
-
-
+Route::get('/land-page-3', [LandPage_3Controller::class, 'index'])->name('land-page-3');
 
 
 //Login Routes for Users
