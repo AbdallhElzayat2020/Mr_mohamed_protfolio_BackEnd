@@ -13,21 +13,21 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="banner-content">
-                    @foreach($banners as $banner)
+                    @foreach ($banners as $banner)
                         <div class="title">
                             <h5 class="text-white">شريكك نحو التطور</h5>
-                            <h1>{{$banner->title}}</h1>
-                            <p>{{$banner->description}}</p>
+                            <h1>{{ $banner->title }}</h1>
+                            <p>{{ $banner->description }}</p>
                         </div>
                     @endforeach
                     <div class="banner-button d-flex align-items-center">
-                        <a class="demo text-decoration-none" href="{{route('contact')}}">اعمالي</a>
+                        <a class="demo text-decoration-none" href="{{ route('contact') }}">اعمالي</a>
                         <div style="border: 1px solid var(--whiteColor); border-radius: 6px; padding: 5px 10px "
-                             class="play-btn d-flex align-items-center">
-                            <a href="{{route('courses')}}" class="text-decoration-none popup-youtube icon">
+                            class="play-btn d-flex align-items-center">
+                            <a href="{{ route('courses') }}" class="text-decoration-none popup-youtube icon">
                                 <i class="ri-play-mini-fill"></i>
                             </a>
-                            <a class="text-decoration-none land-btn popup-youtube" href="{{route('courses')}}">
+                            <a class="text-decoration-none land-btn popup-youtube" href="{{ route('courses') }}">
                                 مشاهدة كورساتي
                             </a>
                         </div>
@@ -51,7 +51,7 @@
         <h1 class="text-center pb-4 text-white">شركاء النجاح</h1>
         <div class="partner-slider-info" data-cue="slideInUp">
             <div class="partner-slider owl-carousel owl-theme">
-                @foreach($companies as $company)
+                @foreach ($companies as $company)
                     <div class="single-partner-logo">
                         <img src="{{ asset($company->image) }}" alt="partner-2">
                     </div>
@@ -76,9 +76,9 @@
                 <div class="about-content about-style">
                     <div class="title">
                         <span class="d-block">نبذة عني</span>
-                        @foreach($banners as $banner)
-                            <h2 class="text-white">{{$banner->title}}</h2>
-                            <p class="text-white">{{$banner->description}}</p>
+                        @foreach ($banners as $banner)
+                            <h2 class="text-white">{{ $banner->title }}</h2>
+                            <p class="text-white">{{ $banner->description }}</p>
                         @endforeach
                     </div>
                     <div class="row">
@@ -110,7 +110,7 @@
                             </div>
                         </div>
                     </div>
-                    <a class="demo text-decoration-none" href="{{route('contact')}}">تواصل معي</a>
+                    <a class="demo text-decoration-none" href="{{ route('contact') }}">تواصل معي</a>
                 </div>
             </div>
         </div>
@@ -171,18 +171,16 @@
         </div>
         <div class="testimonial-slider-info" data-cue="slideInUp">
             <div class="testimonial-slider owl-carousel owl-theme">
-                @foreach($testimonials as $testimonial)
+                @foreach ($testimonials as $testimonial)
                     <div class="single-testimonial-card">
                         <div class="testimonial-user d-flex align-items-center justify-content-between">
                             <div class="user d-flex align-items-center">
                                 <div class="image">
-                                    <img
-                                        src="{{ asset($testimonial->image) }}"
-                                        alt="testimonial-image">
+                                    <img src="{{ asset($testimonial->image) }}" alt="testimonial-image">
                                 </div>
                                 <div class="content">
-                                    <h3>{{$testimonial->name}}</h3>
-                                    <span>{{$testimonial->nickname}}</span>
+                                    <h3>{{ $testimonial->name }}</h3>
+                                    <span>{{ $testimonial->nickname }}</span>
                                 </div>
                             </div>
                             <div class="star-icon">
@@ -196,7 +194,7 @@
                             </div>
                         </div>
                         <p style="color: var(--primaryColor)">
-                            “{{$testimonial->description}}“
+                            “{{ $testimonial->description }}“
                         </p>
                     </div>
                 @endforeach
@@ -218,7 +216,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="single-blog-card style-2">
                     <div class="image">
-                        <a href="{{route('courses-details')}}">
+                        <a href="{{ route('courses-details') }}">
                             <img src="{{ asset('assets/frontend/assets/images/blog/blog-1.jpg') }}" alt="blog-image">
                         </a>
                     </div>
@@ -248,7 +246,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="single-blog-card style-2">
                     <div class="image">
-                        <a href="{{route('courses-details')}}">
+                        <a href="{{ route('courses-details') }}">
                             <img src="{{ asset('assets/frontend/assets/images/blog/blog-1.jpg') }}" alt="blog-image">
                         </a>
                     </div>
@@ -278,7 +276,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="single-blog-card style-2">
                     <div class="image">
-                        <a href="{{route('courses-details')}}">
+                        <a href="{{ route('courses-details') }}">
                             <img src="{{ asset('assets/frontend/assets/images/blog/blog-1.jpg') }}" alt="blog-image">
                         </a>
                     </div>
@@ -349,7 +347,7 @@
                     <ul class="list-unstyled ps-0 mb-0">
                         <li>
                             <a class="text-decoration-none text-white"
-                               href="mailto:support@gmail.com">support@gmail.com</a>
+                                href="mailto:support@gmail.com">support@gmail.com</a>
                         </li>
                         <li>
                             <a class="text-decoration-none text-white" href="mailto:info@email.com">info@email.com</a>
@@ -367,40 +365,51 @@
             <h2 class="text-white">تواصل معنا</h2>
         </div>
         <div class="contact-form-info" data-cue="slideInUp">
-            @if(session()->has('success'))
+            @if (session()->has('success'))
                 <div class="alert alert-success">
-                    {{session()->get('success')}}
+                    {{ session()->get('success') }}
                 </div>
             @endif
-            <form action="{{route('orders')}}" method="post">
+            <form action="{{ route('orders') }}" method="post">
                 @csrf
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
                             <input type="text" name="name" class="form-control" placeholder="Name">
+                            @error('name')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
                             <input type="email" name="email" class="form-control" placeholder="Email">
+                            @error('email')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
 
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
                             <input type="text" name="phone" class="form-control" placeholder="phone">
+                            @error('phone')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
 
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
                             <input type="text" name="subject" class="form-control" placeholder="subject">
+                            @error('subject')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control textarea" name="message" placeholder="Enter Your Comments"
-                              rows="3"></textarea>
+                    <textarea class="form-control textarea" name="message" placeholder="Enter Your Comments" rows="3"></textarea>
                 </div>
                 <button class="btn-primary" type="submit">Send A Message</button>
             </form>

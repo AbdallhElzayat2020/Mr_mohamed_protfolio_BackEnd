@@ -43,7 +43,7 @@
                     <ul class="list-unstyled ps-0 mb-0">
                         <li>
                             <a class="text-decoration-none text-white"
-                               href="mailto:support@gmail.com">support@gmail.com</a>
+                                href="mailto:support@gmail.com">support@gmail.com</a>
                         </li>
                         <li>
                             <a class="text-decoration-none text-white" href="mailto:info@email.com">info@email.com</a>
@@ -61,40 +61,51 @@
             <h2 class="text-white">تواصل معنا</h2>
         </div>
         <div class="contact-form-info" data-cue="slideInUp">
-            @if(session()->has('success'))
+            @if (session()->has('success'))
                 <div class="alert alert-success">
-                    {{session()->get('success')}}
+                    {{ session()->get('success') }}
                 </div>
             @endif
-            <form action="{{route('orders')}}" method="post">
+            <form action="{{ route('orders') }}" method="post">
                 @csrf
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
                             <input type="text" name="name" class="form-control" placeholder="Name">
+                            @error('name')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
                             <input type="email" name="email" class="form-control" placeholder="Email">
+                            @error('email')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
 
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
                             <input type="text" name="phone" class="form-control" placeholder="phone">
+                            @error('phone')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
 
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
                             <input type="text" name="subject" class="form-control" placeholder="subject">
+                            @error('subject')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control textarea" name="message" placeholder="Enter Your Comments"
-                              rows="3"></textarea>
+                    <textarea class="form-control textarea" name="message" placeholder="Enter Your Comments" rows="3"></textarea>
                 </div>
                 <button class="btn-primary" type="submit">Send A Message</button>
             </form>
