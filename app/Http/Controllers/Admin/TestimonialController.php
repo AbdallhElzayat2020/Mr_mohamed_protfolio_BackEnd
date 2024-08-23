@@ -17,6 +17,7 @@ class TestimonialController extends Controller
     public function index()
     {
         $testimonials = Testimonial::all();
+
         return view('admin.testimonial.index', compact('testimonials'));
     }
 
@@ -42,7 +43,7 @@ class TestimonialController extends Controller
 
         $imgPath = $this->handleFileUpload($request, 'image');
 
-        $testimonial = new Testimonial();
+        $testimonial = new Testimonial;
         $testimonial->name = $validatedData['name'];
         $testimonial->nickname = $validatedData['nickname'];
         $testimonial->description = $validatedData['description'];
@@ -56,19 +57,12 @@ class TestimonialController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(Testimonial $testimonial)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
     public function edit($id)
     {
         $testimonial = Testimonial::findOrFail($id);
+
         return view('admin.testimonial.edit', compact('testimonial'));
     }
 
@@ -95,6 +89,7 @@ class TestimonialController extends Controller
         $testimonial->nickname = $validatedData['nickname'];
         $testimonial->description = $validatedData['description'];
         $testimonial->save();
+
         return redirect()->route('admin.testimonial.index')->with('success', 'تم تعديل الراي  بنجاح!');
     }
 
@@ -106,6 +101,7 @@ class TestimonialController extends Controller
         $testimonial = Testimonial::findOrFail($id);
         $this->deleteFile($testimonial->image);
         $testimonial->delete();
+
         return response(['status' => 'success', 'message' => 'Deleted successfully']);
     }
 }

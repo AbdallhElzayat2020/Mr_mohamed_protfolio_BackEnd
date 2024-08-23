@@ -14,19 +14,18 @@
             <h2 class="text-white">معرض الاعمال</h2>
         </div>
         <div class="row justify-content-center" data-cues="fadeIn">
-            @foreach($galleries as $key=> $gallery)
+            @foreach ($galleries as $key => $gallery)
                 <div class="col-lg-4 col-md-6">
                     <div class="single-blog-card style-3 blog-style">
                         <div class="image">
-                            <a href="{{route('gallery-details',$gallery->id)}}">
+                            <a href="{{ route('gallery-details', $gallery->id) }}">
                                 <img style="height: 300px!important; width: 100%; max-width: 100%"
-                                     src="{{asset($gallery->image)}}" alt="blog-image">
+                                    src="{{ asset($gallery->image) }}" alt="blog-image">
                             </a>
                         </div>
                         <div class="content">
                             <h3>
-                                <a class="text-decoration-none"
-                                   href="{{route('gallery-details',$gallery->id)}}">
+                                <a class="text-decoration-none" href="{{ route('gallery-details', $gallery->id) }}">
                                     {{ \Illuminate\Support\Str::limit($gallery->name, 20, '.......') }}
                                 </a>
                             </h3>
@@ -34,7 +33,7 @@
                                 {{ \Illuminate\Support\Str::limit($gallery->description, 50, '......') }}
                             </p>
                             <a class="read-more text-white text-decoration-none"
-                               href="{{route('gallery-details',$gallery->id)}}">
+                                href="{{ route('gallery-details', $gallery->id) }}">
                                 Read More
                                 <i class="ri-arrow-right-line text-white"></i>
                             </a>
@@ -45,7 +44,7 @@
 
         </div>
         <div class="d-flex justify-content-center align-items-center">
-            {{$galleries->links()}}
+            {{ $galleries->links() }}
         </div>
     </div>
 </div>
@@ -89,7 +88,7 @@
                     <ul class="list-unstyled ps-0 mb-0">
                         <li>
                             <a class="text-decoration-none text-white"
-                               href="mailto:support@gmail.com">support@gmail.com</a>
+                                href="mailto:support@gmail.com">support@gmail.com</a>
                         </li>
                         <li>
                             <a class="text-decoration-none text-white" href="mailto:info@email.com">info@email.com</a>
@@ -107,31 +106,56 @@
             <h2 class="text-white">تواصل معنا</h2>
         </div>
         <div class="contact-form-info" data-cue="slideInUp">
-            <form>
+            @if (session()->has('success'))
+                <div class="alert alert-success">
+                    {{ session()->get('success') }}
+                </div>
+            @endif
+            <form action="{{ route('orders') }}" method="post">
+                @csrf
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Name">
+                            <input type="text" name="name" value="{{ old('name') }}" class="form-control"
+                                placeholder="Name">
+                            @error('name')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email">
+                            <input type="email" name="email" value="{{ old('email') }}" class="form-control"
+                                placeholder="Email">
+                            @error('email')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
+
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Phone">
+                            <input type="text" value="{{ old('phone') }}" name="phone" class="form-control"
+                                placeholder="phone">
+                            @error('phone')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
+
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Subject">
+                            <input type="text" value="{{ old('subject') }}" name="subject" class="form-control"
+                                placeholder="subject">
+                            @error('subject')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control textarea" placeholder="Enter Your Comments" rows="3"></textarea>
+                    <textarea class="form-control textarea" value="{{ old('message') }}" name="message" placeholder="Enter Your Comments"
+                        rows="3"></textarea>
                 </div>
                 <button class="btn-primary" type="submit">Send A Message</button>
             </form>

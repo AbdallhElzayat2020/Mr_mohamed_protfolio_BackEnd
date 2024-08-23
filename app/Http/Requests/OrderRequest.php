@@ -24,7 +24,7 @@ class OrderRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'max:255'],
-            'phone' => ['required', 'integer', 'max:15'],
+            'phone' => ['required', 'max:15'],
             'subject' => ['required', 'string'],
             'message' => ['required', 'string'],
         ];

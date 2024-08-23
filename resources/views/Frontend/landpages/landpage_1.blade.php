@@ -20,9 +20,9 @@
     <div class="iframe mt-5">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-10">
+                <div class="col-lg-12">
                     <div class="content d-flex align-items-center justify-content-center">
-                        <iframe class="d-flex align-items-center justify-content-center" width="100%" height="400"
+                        <iframe class="d-flex align-items-center justify-content-center" width="100%" height="700"
                             src="https://www.youtube.com/embed/b2q5yBL4XYI?si=RLHs2LCXE8_e77It"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -263,7 +263,8 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6">
                             <div class="form-group">
-                                <input type="text" name="name" class="form-control" placeholder="Name">
+                                <input type="text" name="name" value="{{ old('name') }}"
+                                    class="form-control" placeholder="Name">
                                 @error('name')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -271,7 +272,8 @@
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="form-group">
-                                <input type="email" name="email" class="form-control" placeholder="Email">
+                                <input type="email" name="email" value="{{ old('email') }}"
+                                    class="form-control" placeholder="Email">
                                 @error('email')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -280,7 +282,8 @@
 
                         <div class="col-lg-6 col-md-6">
                             <div class="form-group">
-                                <input type="text" name="phone" class="form-control" placeholder="phone">
+                                <input type="text" value="{{ old('phone') }}" name="phone"
+                                    class="form-control" placeholder="phone">
                                 @error('phone')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -289,7 +292,8 @@
 
                         <div class="col-lg-6 col-md-6">
                             <div class="form-group">
-                                <input type="text" name="subject" class="form-control" placeholder="subject">
+                                <input type="text" value="{{ old('subject') }}" name="subject"
+                                    class="form-control" placeholder="subject">
                                 @error('subject')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -297,7 +301,8 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control textarea" name="message" placeholder="Enter Your Comments" rows="3"></textarea>
+                        <textarea class="form-control textarea" value="{{ old('message') }}" name="message"
+                            placeholder="Enter Your Comments" rows="3"></textarea>
                     </div>
                     <button class="btn-primary" type="submit">Send A Message</button>
                 </form>
