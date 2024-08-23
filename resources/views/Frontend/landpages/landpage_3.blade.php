@@ -21,11 +21,11 @@
     <div class="iframe my-5">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-10">
+                <div class="col-lg-12">
                     <div class="content d-flex align-items-center justify-content-center">
-                        <iframe class="d-flex align-items-center justify-content-center" width="100%" height="400"
+                        <iframe class="d-flex align-items-center justify-content-center" width="100%" height="700"
                             src="https://www.youtube.com/embed/b2q5yBL4XYI?si=RLHs2LCXE8_e77It"
-                            title="YouTube video player"
+                            title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                         </iframe>
