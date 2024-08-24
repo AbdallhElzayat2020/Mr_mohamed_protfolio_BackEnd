@@ -96,7 +96,7 @@ class HomeController extends Controller
 
     public function profile()
     {
-        return view('Frontend.profile');
+        return view('Frontend.main_profile');
     }
 
 

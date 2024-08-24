@@ -2,7 +2,7 @@
 @section('front_title', 'Contact Page')
 
 <!-- Start Navbar Area -->
-@include('Frontend.layouts.navbar')
+@include('Frontend.layouts.header')
 <!-- End Navbar Area -->
 
 <!-- Start Contact Area -->

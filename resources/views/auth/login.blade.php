@@ -53,7 +53,7 @@
 
 
 <!-- Start Navbar Area -->
-@include('Frontend.layouts.navbar')
+@include('Frontend.layouts.header')
 <!-- End Navbar Area -->
 
 <!-- Start Login Area -->

@@ -3,7 +3,6 @@
 @section('content')
     <div class="main-content">
         <div class="section">
-
             <div class="section-header d-flex justify-content-between align-items-center">
                 <h1>Orders Page</h1>
                 {{-- <div class="dropdown">

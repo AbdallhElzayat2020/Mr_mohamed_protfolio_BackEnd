@@ -35,7 +35,9 @@
             <li class="dropdown">
                 <a href="{{route('admin.gallery.index')}}" class="nav-link"><i class="fas fa-th-large"></i><span>Gallery Page</span></a>
             </li>
-
+            <li class="dropdown">
+                <a href="{{route('admin.courses.index')}}" class="nav-link"><i class="fas fa-th-large"></i><span>Courses Page</span></a>
+            </li>
         </ul>
     </aside>
 </div>
