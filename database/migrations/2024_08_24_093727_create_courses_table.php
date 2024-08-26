@@ -14,6 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->string('title');
             $table->longText('description');
+            $table->longText('content_text');
             $table->string('instructor_name');
             $table->decimal('price', 8 );
             $table->string('image');

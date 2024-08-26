@@ -9,6 +9,7 @@ use App\Models\Admin\Gallery;
 use App\Models\Admin\Service;
 use App\Models\Admin\Team;
 use App\Models\Admin\Testimonial;
+use App\Models\Course;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -29,9 +30,10 @@ class HomeController extends Controller
     public function index()
     {
         $companies = Company::all();
+        $courses = Course::paginate(6);
         $banners = BannerHome::all();
         $testimonials = Testimonial::all();
-        return view('Frontend.home', compact('banners', 'companies', 'testimonials'));
+        return view('Frontend.home', compact('banners', 'companies', 'testimonials', 'courses'));
     }
 
     public function about()
@@ -49,9 +51,10 @@ class HomeController extends Controller
         return view('Frontend.courses');
     }
 
-    public function courses_details()
+    public function courses_details($id)
     {
-        return view('Frontend.courses_details');
+        $course = Course::findOrFail($id);
+        return view('Frontend.courses_details', compact('course'));
     }
 
     public function services()
@@ -98,7 +101,6 @@ class HomeController extends Controller
     {
         return view('Frontend.main_profile');
     }
-
 
 
 }

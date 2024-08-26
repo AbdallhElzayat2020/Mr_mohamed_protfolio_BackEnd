@@ -53,13 +53,6 @@ class GalleryController extends Controller
         return redirect()->route('admin.gallery.index')->with('success', 'تم إضافة  الخدمة بنجاح');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Gallery $gallery)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.

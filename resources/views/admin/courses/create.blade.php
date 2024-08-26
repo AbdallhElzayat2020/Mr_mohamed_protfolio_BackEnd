@@ -1,5 +1,7 @@
 @extends('admin.layouts.master')
+
 @section('title_dashboard', 'Create New Course')
+
 @section('content')
     <div class="main-content">
         <div class="section">
@@ -10,50 +12,61 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{ route('admin.courses.store') }}" method="POST"
+                            <form method="POST" action="{{ route('admin.courses.store') }}"
                                   enctype="multipart/form-data">
                                 @csrf
+
                                 <div class="form-group">
                                     <label for="title">Course Title</label>
-                                    <input value="{{old('title')}}" type="text" name="title" class="form-control"
-                                           id="title" required>
-                                    @error('name')
-                                    <p class="text-danger">{{$message}}</p>
+                                    <input type="text" name="title" id="title" class="form-control"
+                                           value="{{ old('title') }}" required>
+                                    @error('title')
+                                    <p class="text-danger">{{ $message }}</p>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="description">Course Description</label>
+                                    <textarea name="description" id="description" class="form-control"
+                                              required>{{ old('description') }}</textarea>
+                                    @error('description')
+                                    <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="description">Description</label>
-                                    <textarea name="description" class="form-control" id="description" rows="5"
-                                              required>{{ old('description') }}</textarea>
-                                    @error('description')
-                                    <p class="text-danger">{{$message}}</p>
+                                    <label for="content_text">Course content_text</label>
+                                    <textarea name="content_text" id="content_text" class="form-control"
+                                              required>{{ old('content_text') }}</textarea>
+                                    @error('content_text')
+                                    <p class="text-danger">{{ $message }}</p>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="price">Course Price</label>
+                                    <input type="number" step="0.01" name="price" id="price" class="form-control"
+                                           value="{{ old('price') }}" required>
+                                    @error('price')
+                                    <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="instructor_name">Instructor Name</label>
-                                    <input type="text" value="{{old('instructor_name')}}" name="instructor_name"
-                                           class="form-control" id="instructor_name"
-                                           required>
+                                    <input type="text" name="instructor_name" id="instructor_name" class="form-control"
+                                           value="{{ old('instructor_name') }}" required>
                                     @error('instructor_name')
-                                    <p class="text-danger">{{$message}}</p>
+                                    <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </div>
+
                                 <div class="form-group">
-                                    <label for="price">Price</label>
-                                    <input type="text" value="{{old('price')}}" name="price" class="form-control"
-                                           id="price" required>
-                                    @error('price')
-                                    <p class="text-danger">{{$message}}</p>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="cover_image">Cover Image</label>
-                                    <input type="file" name="image" class="form-control" id="cover_image"
-                                           required>
+                                    <label for="img">Course Image</label>
+                                    <input type="file" name="image" id="img" class="form-control">
                                     @error('image')
-                                    <p class="text-danger">{{$message}}</p>
+                                    <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </div>
+
                                 <button type="submit" class="btn btn-primary">Create Course</button>
                             </form>
                         </div>

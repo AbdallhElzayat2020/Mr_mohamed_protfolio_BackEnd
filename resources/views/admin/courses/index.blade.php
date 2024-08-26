@@ -29,6 +29,7 @@
                                             Course Name
                                         </th>
                                         <th>Description</th>
+                                        <th>content_text</th>
                                         <th>Price</th>
                                         <th>Cover_Img</th>
                                         <th>Instructor_Name</th>
@@ -50,6 +51,9 @@
                                                 {{$course->description}}
                                             </td>
                                             <td>
+                                                {{$course->content_text}}
+                                            </td>
+                                            <td>
                                                 {{$course->price}}
                                             </td>
                                             <td>
@@ -66,7 +70,7 @@
                                                 {{$course->created_at}}
                                             </td>
                                             <td class="d-flex align-items-center gap-5">
-                                                <a href="{{route('admin.videos.create',$course->id)}}"
+                                                <a href="{{route('admin.videos.createForCourse',$course->id)}}"
                                                    class="btn btn-success btn-sm mr-2">Add Video</a>
                                                 <a href="{{route('admin.courses.destroy',$course->id)}}"
                                                    class="btn btn-danger btn-sm mr-2 delete-item">Delete</a>

@@ -23,6 +23,16 @@
                         الاعمال</a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ route('gallery') }}" class="nav-link {{ Route::is('gallery') ? 'active' : '' }}">
+                        المدونة
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('gallery') }}" class="nav-link {{ Route::is('gallery') ? 'active' : '' }}">
+                        المنتجات الرقمية
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('courses') }}" class="nav-link {{ Route::is('courses') ? 'active' : '' }}">الكورسات</a>
                 </li>
                 <li class="nav-item">

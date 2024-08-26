@@ -36,7 +36,7 @@
 
 
 <script>
-    // add csrf token in ajax request
+    // add csrf token in ajax requestand there is an csrf in meta in head
     $.ajaxSetup({
         headers: {
             'X_CSRF_TOKEN': $('meta[name="csrf-token"]').attr('content')

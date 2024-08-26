@@ -27,7 +27,7 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
 Route::get('/courses', [HomeController::class, 'courses'])->name('courses');
 
-Route::get('/courses-details', [HomeController::class, 'courses_details'])->name('courses-details');
+Route::get('/courses-details/{id}', [HomeController::class, 'courses_details'])->name('courses-details');
 
 Route::get('/services', [HomeController::class, 'services'])->name('services');
 

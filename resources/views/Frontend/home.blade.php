@@ -23,7 +23,7 @@
                     <div class="banner-button d-flex align-items-center">
                         <a class="demo text-decoration-none" href="{{ route('contact') }}">اعمالي</a>
                         <div style="border: 1px solid var(--whiteColor); border-radius: 6px; padding: 5px 10px "
-                            class="play-btn d-flex align-items-center">
+                             class="play-btn d-flex align-items-center">
                             <a href="{{ route('courses') }}" class="text-decoration-none popup-youtube icon">
                                 <i class="ri-play-mini-fill"></i>
                             </a>
@@ -213,97 +213,29 @@
             <h2>الكورسات</h2>
         </div>
         <div class="row justify-content-center" data-cues="fadeIn">
-            <div class="col-lg-4 col-md-6">
-                <div class="single-blog-card style-2">
-                    <div class="image">
-                        <a href="{{ route('courses-details') }}">
-                            <img src="{{ asset('assets/frontend/assets/images/blog/blog-1.jpg') }}" alt="blog-image">
-                        </a>
-                    </div>
-                    <div class="content">
-                        <ul class="list-unstyled ps-0 list">
-                            <li class="d-inline-block">
-                                <i class="ri-user-line" style="color: var(--secondaryColor)"></i>
-                                By <a class="text-decoration-none">Admin</a>
-                            </li>
-                            <li class="d-inline-block">
-                                <i class="ri-calendar-2-line" style="color: var(--secondaryColor)"></i>
-                                November 6, 2024
-                            </li>
-                        </ul>
-                        <h3>
-                            <a class="text-decoration-none" href="gallery-details.html">Securing the Future: How
-                                AI
-                                Redefines Customer Workload Protection.</a>
-                        </h3>
-                        <a class="read-more text-decoration-none" href="gallery-details.html">
-                            Read More
-                            <i class="ri-arrow-right-line"></i>
-                        </a>
+            @foreach($courses as $key =>$course)
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-blog-card style-2">
+                        <div class="image">
+                            <a href="{{ route('courses-details',$course->id) }}">
+                                <img style="height: 300px; width: 100%" class="img-fluid" src="{{ asset($course->image) }}"
+                                     alt="blog-image">
+                            </a>
+                        </div>
+                        <div class="content">
+                            <h3>
+                                <a class="text-decoration-none" href="{{route('courses-details',$course->id)}}">
+                                    {{$course->title}}
+                                </a>
+                            </h3>
+                            <a class="read-more text-decoration-none" href="{{route('courses-details',$course->id)}}">
+                                ReadMore
+                                <i class="ri-arrow-right-line"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-blog-card style-2">
-                    <div class="image">
-                        <a href="{{ route('courses-details') }}">
-                            <img src="{{ asset('assets/frontend/assets/images/blog/blog-1.jpg') }}" alt="blog-image">
-                        </a>
-                    </div>
-                    <div class="content">
-                        <ul class="list-unstyled ps-0 list">
-                            <li class="d-inline-block">
-                                <i class="ri-user-line" style="color: var(--secondaryColor)"></i>
-                                By <a class="text-decoration-none">Admin</a>
-                            </li>
-                            <li class="d-inline-block">
-                                <i class="ri-calendar-2-line" style="color: var(--secondaryColor)"></i>
-                                November 6, 2024
-                            </li>
-                        </ul>
-                        <h3>
-                            <a class="text-decoration-none" href="gallery-details.html">Securing the Future: How
-                                AI
-                                Redefines Customer Workload Protection.</a>
-                        </h3>
-                        <a class="read-more text-decoration-none" href="gallery-details.html">
-                            Read More
-                            <i class="ri-arrow-right-line"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-blog-card style-2">
-                    <div class="image">
-                        <a href="{{ route('courses-details') }}">
-                            <img src="{{ asset('assets/frontend/assets/images/blog/blog-1.jpg') }}" alt="blog-image">
-                        </a>
-                    </div>
-                    <div class="content">
-                        <ul class="list-unstyled ps-0 list">
-                            <li class="d-inline-block">
-                                <i class="ri-user-line" style="color: var(--secondaryColor)"></i>
-                                By <a class="text-decoration-none">Admin</a>
-                            </li>
-                            <li class="d-inline-block">
-                                <i class="ri-calendar-2-line" style="color: var(--secondaryColor)"></i>
-                                November 6, 2024
-                            </li>
-                        </ul>
-                        <h3>
-                            <a class="text-decoration-none" href="gallery-details.html">Securing the Future: How
-                                AI
-                                Redefines Customer Workload Protection.</a>
-                        </h3>
-                        <a class="read-more text-decoration-none" href="gallery-details.html">
-                            Read More
-                            <i class="ri-arrow-right-line"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
+            @endforeach
         </div>
     </div>
 </div>
@@ -347,7 +279,7 @@
                     <ul class="list-unstyled ps-0 mb-0">
                         <li>
                             <a class="text-decoration-none text-white"
-                                href="mailto:support@gmail.com">support@gmail.com</a>
+                               href="mailto:support@gmail.com">support@gmail.com</a>
                         </li>
                         <li>
                             <a class="text-decoration-none text-white" href="mailto:info@email.com">info@email.com</a>
@@ -376,18 +308,18 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
                             <input type="text" name="name" value="{{ old('name') }}" class="form-control"
-                                placeholder="Name">
+                                   placeholder="Name">
                             @error('name')
-                                <span class="text-danger">{{ $message }}</span>
+                            <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
                             <input type="email" name="email" value="{{ old('email') }}" class="form-control"
-                                placeholder="Email">
+                                   placeholder="Email">
                             @error('email')
-                                <span class="text-danger">{{ $message }}</span>
+                            <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>
@@ -395,9 +327,9 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
                             <input type="text" value="{{ old('phone') }}" name="phone" class="form-control"
-                                placeholder="phone">
+                                   placeholder="phone">
                             @error('phone')
-                                <span class="text-danger">{{ $message }}</span>
+                            <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>
@@ -405,16 +337,16 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
                             <input type="text" value="{{ old('subject') }}" name="subject" class="form-control"
-                                placeholder="subject">
+                                   placeholder="subject">
                             @error('subject')
-                                <span class="text-danger">{{ $message }}</span>
+                            <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <textarea class="form-control textarea" value="{{ old('message') }}" name="message"
-                        placeholder="Enter Your Comments" rows="3"></textarea>
+                              placeholder="Enter Your Comments" rows="3"></textarea>
                 </div>
                 <button class="btn-primary" type="submit">Send A Message</button>
             </form>

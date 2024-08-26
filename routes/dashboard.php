@@ -52,9 +52,22 @@ Route::group(
 
     Route::resource('courses', AdminCourseController::class);
 
-    Route::get('videos/create', [VideoController::class, 'create'])->name('videos.create');
-    Route::post('videos/store', [VideoController::class, 'store'])->name('videos.store');
-    Route::get('courses/{courseId}/videos', [VideoController::class, 'index']);
+    Route::resource('blog', AdminCourseController::class);
+
+
+    //    create Video
+//    Route::get('videos/create', [VideoController::class, 'create'])->name('videos.create'); // create Videos
+    Route::get('courses/{course}/videos/create', [VideoController::class, 'createForCourse'])->name('videos.createForCourse');
+
+    //    store video
+    Route::post('videos/store', [VideoController::class, 'store'])->name('videos.store'); // insert Videos into database
+
+    Route::get('videos/{courseId}/videos', [VideoController::class, 'index']); // return all videos of course
+
+    Route::delete('videos/{video}', [VideoController::class, 'destroy'])->name('videos.destroy');// delete videos from database
+    Route::get('videos/{video}/edit', [VideoController::class, 'edit'])->name('videos.edit');// EDIT video Data
+    Route::put('videos/{video}', [VideoController::class, 'update'])->name('videos.update');// Update Video Data into database
+
 
 //    Route::get('dashboard/videos/create', [VideoController::class, 'create'])->name('videos.create');
 //    Route::post('dashboard/videos', [VideoController::class, 'store'])->name('videos.store');
