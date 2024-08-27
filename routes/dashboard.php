@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminAuthController;
+use App\Http\Controllers\Admin\adminBlogController;
 use App\Http\Controllers\Admin\AdminCourseController;
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\AdminOrderController;
@@ -52,8 +53,9 @@ Route::group(
 
     Route::resource('courses', AdminCourseController::class);
 
-    Route::resource('blog', AdminCourseController::class);
+    Route::resource('blogs', AdminBlogController::class);
 
+    Route::resource('products', AdminCourseController::class);
 
     //    create Video
 //    Route::get('videos/create', [VideoController::class, 'create'])->name('videos.create'); // create Videos

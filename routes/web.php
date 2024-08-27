@@ -37,6 +37,10 @@ Route::get('/team', [HomeController::class, 'team'])->name('team');
 
 Route::get('/gallery', [HomeController::class, 'gallery'])->name('gallery');
 
+Route::get('/blogs', [HomeController::class, 'blogs'])->name('blogs');
+
+Route::get('/products', [HomeController::class, 'products'])->name('products');
+
 Route::get('/gallery-details/{id}', [HomeController::class, 'gallery_details'])->name('gallery-details');
 
 Route::get('/profile', [HomeController::class, 'profile'])->name('profile');

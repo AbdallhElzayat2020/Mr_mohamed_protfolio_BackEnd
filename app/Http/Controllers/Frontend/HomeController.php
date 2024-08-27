@@ -9,6 +9,7 @@ use App\Models\Admin\Gallery;
 use App\Models\Admin\Service;
 use App\Models\Admin\Team;
 use App\Models\Admin\Testimonial;
+use App\Models\Blog;
 use App\Models\Course;
 use Illuminate\Http\Request;
 
@@ -48,7 +49,8 @@ class HomeController extends Controller
 
     public function courses()
     {
-        return view('Frontend.courses');
+        $courses = Course::paginate(6);
+        return view('Frontend.courses', compact('courses'));
     }
 
     public function courses_details($id)
@@ -81,6 +83,18 @@ class HomeController extends Controller
     {
         $galleries = Gallery::paginate(6);
         return view('Frontend.gallery', compact('galleries'));
+    }
+
+    public function blogs()
+    {
+        $blogs = Blog::paginate(6);
+        return view('Frontend.blogs', compact('blogs'));
+    }
+
+    public function products()
+    {
+        $blogs = Blog::paginate(6);
+        return view('Frontend.products', compact('blogs'));
     }
 
     public function gallery_details($id)

@@ -38,6 +38,12 @@
             <li class="dropdown">
                 <a href="{{route('admin.courses.index')}}" class="nav-link"><i class="fas fa-th-large"></i><span>Courses Page</span></a>
             </li>
+            <li class="dropdown">
+                <a href="{{route('admin.blogs.index')}}" class="nav-link"><i class="fas fa-th-large"></i><span>blogs Page</span></a>
+            </li>
+            <li class="dropdown">
+                <a href="{{route('admin.products.index')}}" class="nav-link"><i class="fas fa-th-large"></i><span>products Page</span></a>
+            </li>
         </ul>
     </aside>
 </div>

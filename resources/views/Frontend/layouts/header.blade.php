@@ -23,12 +23,12 @@
                         الاعمال</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('gallery') }}" class="nav-link {{ Route::is('gallery') ? 'active' : '' }}">
+                    <a href="{{ route('blogs') }}" class="nav-link {{ Route::is('blogs') ? 'active' : '' }}">
                         المدونة
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('gallery') }}" class="nav-link {{ Route::is('gallery') ? 'active' : '' }}">
+                    <a href="{{ route('products') }}" class="nav-link {{ Route::is('products') ? 'active' : '' }}">
                         المنتجات الرقمية
                     </a>
                 </li>
