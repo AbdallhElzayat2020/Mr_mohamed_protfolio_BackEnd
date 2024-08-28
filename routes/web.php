@@ -5,6 +5,8 @@ use App\Http\Controllers\Frontend\LandPage_1Controller;
 use App\Http\Controllers\Frontend\LandPage_2Controller;
 use App\Http\Controllers\Frontend\LandPage_3Controller;
 use App\Http\Controllers\Frontend\OrderController;
+use App\Http\Controllers\Frontend\PaymentsCallbackController;
+use App\Http\Controllers\Frontend\PaymentsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -57,23 +59,17 @@ Route::get('/land-page-2', [LandPage_2Controller::class, 'index'])->name('land-p
 
 Route::get('/land-page-3', [LandPage_3Controller::class, 'index'])->name('land-page-3');
 
+//Payment Gateway
+Route::get('payment/create', [PaymentsController::class, 'create'])->name('payment.create');
+
+Route::get('payment/callback/success', [PaymentsCallbackController::class, 'success'])->name('payments.success');
+
+Route::get('payment/callback/cancel', [PaymentsCallbackController::class, 'cancel'])->name('payments.cancel');
+
 
 //Login Routes for Users
 //Route::get('/login', [AdminHomeController::class, 'login'])->name('login');
 //Route::post('login', [AdminHomeController::class, 'handleLogin'])->name('handle-login');
-
-
-// Route::get('/dashboard', [AdminHomeController::class, 'index'])->name('dashboard');
-//
-//Route::get('/dashboard', function () {
-//    return view('dashboard');
-//})->middleware(['auth', 'verified'])->name('dashboard');
-
-//Route::middleware('auth')->group(function () {
-//    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-//});
 
 require __DIR__ . '/auth.php';
 require __DIR__ . '/dashboard.php';
