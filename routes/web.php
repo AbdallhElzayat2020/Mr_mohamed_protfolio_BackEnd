@@ -39,7 +39,10 @@ Route::get('/gallery', [HomeController::class, 'gallery'])->name('gallery');
 
 Route::get('/blogs', [HomeController::class, 'blogs'])->name('blogs');
 
+Route::get('/blogs-details/{id}', [HomeController::class, 'blog_details'])->name('blog_details');
+
 Route::get('/products', [HomeController::class, 'products'])->name('products');
+Route::get('/products-details/{id}', [HomeController::class, 'products_details'])->name('products_details');
 
 Route::get('/gallery-details/{id}', [HomeController::class, 'gallery_details'])->name('gallery-details');
 

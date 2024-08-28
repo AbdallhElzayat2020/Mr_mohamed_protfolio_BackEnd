@@ -18,22 +18,22 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single-blog-card style-3 blog-style">
                         <div class="image">
-                            <a href="{{ route('gallery-details', $blog->id) }}">
+                            <a href="{{ route('blog_details', $blog->id) }}">
                                 <img style="height: 300px!important; width: 100%; max-width: 100%"
                                     src="{{ asset($blog->image) }}" alt="blog-image">
                             </a>
                         </div>
                         <div class="content">
                             <h3>
-                                <a class="text-decoration-none" href="{{ route('gallery-details', $blog->id) }}">
-                                    {{ \Illuminate\Support\Str::limit($blog->name, 20, '.......') }}
+                                <a class="text-decoration-none" href="{{ route('blog_details', $blog->id) }}">
+                                    {{ \Illuminate\Support\Str::limit($blog->title, 20, '.......') }}
                                 </a>
                             </h3>
                             <p>
                                 {{ \Illuminate\Support\Str::limit($blog->description, 50, '......') }}
                             </p>
                             <a class="read-more text-white text-decoration-none"
-                                href="{{ route('gallery-details', $blog->id) }}">
+                                href="{{ route('blog_details', $blog->id) }}">
                                 Read More
                                 <i class="ri-arrow-right-line text-white"></i>
                             </a>

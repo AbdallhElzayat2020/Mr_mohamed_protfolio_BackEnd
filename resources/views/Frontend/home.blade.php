@@ -36,7 +36,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="banner-image">
-                    <img src="{{ asset('assets/frontend/assets/images/Me_1.jpg') }}" alt="about-image">
+                    <img  src="{{ asset('assets/frontend/assets/images/mohamed.png') }}" alt="about-image">
                 </div>
             </div>
         </div>

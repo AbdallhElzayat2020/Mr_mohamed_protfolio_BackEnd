@@ -13,7 +13,7 @@
                     <a href="{{ route('home') }}" class="nav-link {{ Route::is('home') ? 'active' : '' }}">الرئيسية</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('about') }}" class="nav-link {{ Route::is('about') ? 'active' : '' }}">من انا</a>
+                    <a href="{{ route('about') }}" class="nav-link {{ Route::is('about') ? 'active' : '' }}">من نحن</a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('services') }}" class="nav-link {{ Route::is('services') ? 'active' : '' }}">الخدمات</a>
@@ -34,10 +34,6 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('courses') }}" class="nav-link {{ Route::is('courses') ? 'active' : '' }}">الكورسات</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('team') }}" class="nav-link {{ Route::is('team') ? 'active' : '' }}">فريق
-                        العمل</a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('contact') }}" class="nav-link {{ Route::is('contact') ? 'active' : '' }}">تواصل

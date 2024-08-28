@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\adminBlogController;
 use App\Http\Controllers\Admin\AdminCourseController;
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\AdminOrderController;
+use App\Http\Controllers\Admin\AdminProductController;
 use App\Http\Controllers\Admin\BannerHomeController;
 use App\Http\Controllers\Admin\CompanyController;
 use App\Http\Controllers\Admin\GalleryController;
@@ -55,7 +56,7 @@ Route::group(
 
     Route::resource('blogs', AdminBlogController::class);
 
-    Route::resource('products', AdminCourseController::class);
+    Route::resource('products', AdminProductController::class);
 
     //    create Video
 //    Route::get('videos/create', [VideoController::class, 'create'])->name('videos.create'); // create Videos

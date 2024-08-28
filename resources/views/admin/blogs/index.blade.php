@@ -41,18 +41,16 @@
                                                 {{$blog->title}}
                                             </td>
                                             <td>
-                                                {{$blog->nickname}}
+                                                {{$blog->description}}
+                                            </td>
+                                            <td>
+                                                {{$blog->content}}
+                                            </td>
+                                            <td>
+                                                <img src="{{asset($blog->image)}}" alt="" width="70" height="70">
                                             </td>
                                             <td>
                                                 {{$blog->created_at}}
-                                            </td>
-                                            <td>
-                                                {{$blog->description}}
-                                            </td>
-
-
-                                            <td>
-                                                <img src="{{asset($blog->image)}}" alt="" width="70" height="70">
                                             </td>
                                             <td class="d-flex align-items-center gap-5">
                                                 <a href="{{route('admin.blogs.destroy',$blog->id)}}"

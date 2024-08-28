@@ -11,6 +11,7 @@ use App\Models\Admin\Team;
 use App\Models\Admin\Testimonial;
 use App\Models\Blog;
 use App\Models\Course;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -39,7 +40,9 @@ class HomeController extends Controller
 
     public function about()
     {
-        return view('Frontend.about');
+        $banners = BannerHome::all();
+        $companies = Company::all();
+        return view('Frontend.about', compact('banners', 'companies'));
     }
 
     public function contact()
@@ -91,10 +94,24 @@ class HomeController extends Controller
         return view('Frontend.blogs', compact('blogs'));
     }
 
+    public function blog_details($id)
+    {
+        $blog = Blog::findorFail($id);
+        $blogs = Blog::paginate(6);
+        return view('Frontend.blog_details', compact('blogs', 'blog'));
+    }
+
+
     public function products()
     {
         $blogs = Blog::paginate(6);
         return view('Frontend.products', compact('blogs'));
+    }
+
+    public function products_details($id)
+    {
+        $product=Product::findorFail($id);
+        return view('Frontend.products_details',compact('product'));
     }
 
     public function gallery_details($id)

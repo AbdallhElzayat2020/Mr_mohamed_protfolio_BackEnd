@@ -12,16 +12,18 @@
         <div class="row align-items-center" data-cue="slideInUp">
             <div class="col-lg-6">
                 <div class="about-image">
-                    <img src="{{asset('assets/frontend/assets/images/Me_1.jpg')}}" alt="about-image">
+                    <img src="{{ asset('assets/frontend/assets/images/mohamed.png') }}" alt="about-image">
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="about-content about-style">
-                    <div class="title">
-                        <span class="d-block">نبذة عني</span>
-                        <h2 class="text-white">الاسم هنا ثلاثس</h2>
-                        <p class="text-white">نبذة بسيطة هنا لا تزيد عن سطرين ايضا</p>
-                    </div>
+                    @foreach ($banners as $banner)
+                        <div class="title">
+                            <h5 class="text-white">شريكك نحو التطور</h5>
+                            <h1>{{ $banner->title }}</h1>
+                            <p>{{ $banner->description }}</p>
+                        </div>
+                    @endforeach
                     <div class="row">
                         <div class="col-lg-4 col-sm-6">
                             <div class="about-item">
@@ -215,6 +217,154 @@
                     </div>
                 </div>
             </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-team-card">
+                    <div class="image">
+                        <a class="text-decoration-none" href="#">
+                            <img src="{{asset('assets/frontend/assets/images/team/team-1.jpg')}}" alt="team-image">
+                        </a>
+                    </div>
+                    <h3>
+                        <a class="text-decoration-none" href="#">Bonnie Acosta</a>
+                    </h3>
+                    <p>Lead Developer</p>
+                    <div class="social-list">
+                        <ul class="list-unstyled ps-0 mb-0">
+                            <li>
+                                <a class="text-decoration-none" target="_blank" href="https://www.facebook.com/">
+                                    <i class="ri-facebook-circle-line"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-decoration-none" target="_blank" href="https://twitter.com/">
+                                    <i class="ri-twitter-x-line"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-decoration-none" target="_blank" href="https://www.instagram.com/">
+                                    <i class="ri-instagram-line"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-decoration-none" target="_blank" href="https://www.pinterest.com/">
+                                    <i class="ri-pinterest-line"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-team-card">
+                    <div class="image">
+                        <a class="text-decoration-none" href="#">
+                            <img src="{{asset('assets/frontend/assets/images/team/team-1.jpg')}}" alt="team-image">
+                        </a>
+                    </div>
+                    <h3>
+                        <a class="text-decoration-none" href="#">Bonnie Acosta</a>
+                    </h3>
+                    <p>Lead Developer</p>
+                    <div class="social-list">
+                        <ul class="list-unstyled ps-0 mb-0">
+                            <li>
+                                <a class="text-decoration-none" target="_blank" href="https://www.facebook.com/">
+                                    <i class="ri-facebook-circle-line"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-decoration-none" target="_blank" href="https://twitter.com/">
+                                    <i class="ri-twitter-x-line"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-decoration-none" target="_blank" href="https://www.instagram.com/">
+                                    <i class="ri-instagram-line"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-decoration-none" target="_blank" href="https://www.pinterest.com/">
+                                    <i class="ri-pinterest-line"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-team-card">
+                    <div class="image">
+                        <a class="text-decoration-none" href="#">
+                            <img src="{{asset('assets/frontend/assets/images/team/team-1.jpg')}}" alt="team-image">
+                        </a>
+                    </div>
+                    <h3>
+                        <a class="text-decoration-none" href="#">Bonnie Acosta</a>
+                    </h3>
+                    <p>Lead Developer</p>
+                    <div class="social-list">
+                        <ul class="list-unstyled ps-0 mb-0">
+                            <li>
+                                <a class="text-decoration-none" target="_blank" href="https://www.facebook.com/">
+                                    <i class="ri-facebook-circle-line"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-decoration-none" target="_blank" href="https://twitter.com/">
+                                    <i class="ri-twitter-x-line"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-decoration-none" target="_blank" href="https://www.instagram.com/">
+                                    <i class="ri-instagram-line"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-decoration-none" target="_blank" href="https://www.pinterest.com/">
+                                    <i class="ri-pinterest-line"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-team-card">
+                    <div class="image">
+                        <a class="text-decoration-none" href="#">
+                            <img src="{{asset('assets/frontend/assets/images/team/team-1.jpg')}}" alt="team-image">
+                        </a>
+                    </div>
+                    <h3>
+                        <a class="text-decoration-none" href="#">Bonnie Acosta</a>
+                    </h3>
+                    <p>Lead Developer</p>
+                    <div class="social-list">
+                        <ul class="list-unstyled ps-0 mb-0">
+                            <li>
+                                <a class="text-decoration-none" target="_blank" href="https://www.facebook.com/">
+                                    <i class="ri-facebook-circle-line"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-decoration-none" target="_blank" href="https://twitter.com/">
+                                    <i class="ri-twitter-x-line"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-decoration-none" target="_blank" href="https://www.instagram.com/">
+                                    <i class="ri-instagram-line"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-decoration-none" target="_blank" href="https://www.pinterest.com/">
+                                    <i class="ri-pinterest-line"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
@@ -228,36 +378,11 @@
         <h1 class="text-center py-4 text-white">شركاء النجاح</h1>
         <div class="partner-slider-info" data-cue="slideInUp">
             <div class="partner-slider owl-carousel owl-theme">
-                <div class="single-partner-logo">
-                    <img src="{{ asset('assets/frontend/assets/images/partner/partner-6.png') }}" alt="partner-2">
-                </div>
-                <div class="single-partner-logo">
-                    <img src="{{ asset('assets/frontend/assets/images/partner/partner-6.png') }}" alt="partner-2">
-                </div>
-                <div class="single-partner-logo">
-                    <img src="{{ asset('assets/frontend/assets/images/partner/partner-6.png') }}" alt="partner-2">
-                </div>
-                <div class="single-partner-logo">
-                    <img src="{{ asset('assets/frontend/assets/images/partner/partner-6.png') }}" alt="partner-2">
-                </div>
-                <div class="single-partner-logo">
-                    <img src="{{ asset('assets/frontend/assets/images/partner/partner-6.png') }}" alt="partner-2">
-                </div>
-                <div class="single-partner-logo">
-                    <img src="{{ asset('assets/frontend/assets/images/partner/partner-6.png') }}" alt="partner-2">
-                </div>
-                <div class="single-partner-logo">
-                    <img src="{{ asset('assets/frontend/assets/images/partner/partner-6.png') }}" alt="partner-2">
-                </div>
-                <div class="single-partner-logo">
-                    <img src="{{ asset('assets/frontend/assets/images/partner/partner-6.png') }}" alt="partner-2">
-                </div>
-                <div class="single-partner-logo">
-                    <img src="{{ asset('assets/frontend/assets/images/partner/partner-6.png') }}" alt="partner-2">
-                </div>
-                <div class="single-partner-logo">
-                    <img src="{{ asset('assets/frontend/assets/images/partner/partner-6.png') }}" alt="partner-2">
-                </div>
+                @foreach ($companies as $company)
+                    <div class="single-partner-logo">
+                        <img src="{{ asset($company->image) }}" alt="partner-2">
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>
