@@ -14,18 +14,18 @@
             <div class="col-lg-6">
                 <div class="banner-content">
                     <div class="title">
-                        <h3 class="text-white">{{$course->title}}</h3>
-                        <p>{{$course->description}}</p>
+                        <h3 class="text-white">{{$product->name}}</h3>
+                        <p>{{$product->description}}</p>
                     </div>
                     <div class="banner-button d-flex align-items-center">
                         <a class="demo text-decoration-none" href="#"> <span
-                                    class="mx-1">سعر المنتج $</span> {{$course->price}} </a>
+                                    class="mx-1">سعر المنتج $</span> {{$product->price}} </a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="banner-image">
-                    <img src="{{asset($course->image)}}" alt="banner-image">
+                    <img src="{{asset('storage/'.$product->image)}}" alt="banner-image">
                 </div>
             </div>
         </div>
@@ -38,15 +38,15 @@
 </div>
 <!-- End Banner Area -->
 
-<div style="background-color: var(--primaryColor)" class="overview">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h3 class="text-white mb-3">{{$course->title}}</h3>
-                <p>
-                    {{$course->content_text}}
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
+{{--<div style="background-color: var(--primaryColor)" class="overview">--}}
+{{--    <div class="container">--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-lg-12">--}}
+{{--                <h3 class="text-white mb-3">{{$course->title}}</h3>--}}
+{{--                <p>--}}
+{{--                    {{$course->content_text}}--}}
+{{--                </p>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}

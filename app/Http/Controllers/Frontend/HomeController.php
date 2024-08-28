@@ -104,8 +104,8 @@ class HomeController extends Controller
 
     public function products()
     {
-        $blogs = Blog::paginate(6);
-        return view('Frontend.products', compact('blogs'));
+        $products = Product::paginate(6);
+        return view('Frontend.products', compact('products'));
     }
 
     public function products_details($id)

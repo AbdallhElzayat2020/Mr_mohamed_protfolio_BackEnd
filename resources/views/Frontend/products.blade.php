@@ -14,26 +14,26 @@
             <h2 class="text-white">المنتجات</h2>
         </div>
         <div class="row justify-content-center" data-cues="fadeIn">
-            @foreach ($blogs as $key => $blog)
+            @foreach ($products as $key => $product)
                 <div class="col-lg-4 col-md-6">
                     <div class="single-blog-card style-3 blog-style">
                         <div class="image">
-                            <a href="{{ route('gallery-details', $blog->id) }}">
+                            <a href="{{ route('products_details', $product->id) }}">
                                 <img style="height: 300px!important; width: 100%; max-width: 100%"
-                                     src="{{ asset($blog->image) }}" alt="blog-image">
+                                     src="{{ asset('storage/' . $product->image) }}" alt="blog-image">
                             </a>
                         </div>
                         <div class="content">
                             <h3>
-                                <a class="text-decoration-none" href="{{ route('gallery-details', $blog->id) }}">
-                                    {{ \Illuminate\Support\Str::limit($blog->name, 20, '.......') }}
+                                <a class="text-decoration-none" href="{{ route('products_details', $product->id) }}">
+                                    {{ \Illuminate\Support\Str::limit($product->name, 20, '.......') }}
                                 </a>
                             </h3>
                             <p>
-                                {{ \Illuminate\Support\Str::limit($blog->description, 50, '......') }}
+                                {{ \Illuminate\Support\Str::limit($product->description, 50, '......') }}
                             </p>
                             <a class="read-more text-white text-decoration-none"
-                               href="{{ route('gallery-details', $blog->id) }}">
+                               href="{{ route('products_details', $product->id) }}">
                                 Read More
                                 <i class="ri-arrow-right-line text-white"></i>
                             </a>
@@ -44,7 +44,7 @@
 
         </div>
         <div class="d-flex justify-content-center align-items-center">
-            {{ $blogs->links() }}
+            {{ $products->links() }}
         </div>
     </div>
 </div>
