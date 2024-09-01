@@ -51,12 +51,13 @@ class Thawani
         }
 
         throw new \Exception($body['description'], $body['code']);
+
     }
 
     public function getPayUrl($session_id)
     {
         if ($this->mode == 'test') {
-            return "https://uatcheckout.thawani.om/{$session_id}?key={$this->publishable_key}";
+            return "https://uatcheckout.thawani.om/pay/{$session_id}?key={$this->publishable_key}";
             // return "https://uatcheckout.thawani.om/pay/{session_id}?key=publishable_key";
         }
         return "https://checkout.thawani.om/pay/{$session_id}?key={$this->publishable_key}";
