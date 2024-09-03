@@ -59,7 +59,7 @@ Route::get('/land-page-2', [LandPage_2Controller::class, 'index'])->name('land-p
 
 Route::get('/land-page-3', [LandPage_3Controller::class, 'index'])->name('land-page-3');
 
-//Payment Gateway
+//Payment Gateway Thawani
 Route::get('payment/create', [PaymentsController::class, 'create'])->name('payment.create');
 
 Route::get('payment/callback/success', [PaymentsCallbackController::class, 'success'])->name('payments.success');
@@ -67,9 +67,7 @@ Route::get('payment/callback/success', [PaymentsCallbackController::class, 'succ
 Route::get('payment/callback/cancel', [PaymentsCallbackController::class, 'cancel'])->name('payments.cancel');
 
 
-//Login Routes for Users
-//Route::get('/login', [AdminHomeController::class, 'login'])->name('login');
-//Route::post('login', [AdminHomeController::class, 'handleLogin'])->name('handle-login');
+//Login Routes in Auth Controller
 
 require __DIR__ . '/auth.php';
 require __DIR__ . '/dashboard.php';

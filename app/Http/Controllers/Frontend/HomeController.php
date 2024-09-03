@@ -24,7 +24,7 @@ class HomeController extends Controller
     public function handleLogin(Request $request)
     {
         $request->authenticate();
-//        toast(__('You have  been login successfully!'), 'success');
+        //        toast(__('You have  been login successfully!'), 'success');
 
         return redirect()->route('admin.dashboard');
     }
@@ -64,7 +64,7 @@ class HomeController extends Controller
 
     public function services()
     {
-//        $service = Service::findOrFail($id);
+        //        $service = Service::findOrFail($id);
 
         $companies = Company::all();
         $services = Service::paginate(4);
@@ -110,8 +110,8 @@ class HomeController extends Controller
 
     public function products_details($id)
     {
-        $product=Product::findorFail($id);
-        return view('Frontend.products_details',compact('product'));
+        $product = Product::findorFail($id);
+        return view('Frontend.products_details', compact('product'));
     }
 
     public function gallery_details($id)
@@ -130,8 +130,7 @@ class HomeController extends Controller
 
     public function profile()
     {
-        return view('Frontend.main_profile');
+        $course = Course::all();
+        return view('Frontend.main_profile', compact('course'));
     }
-
-
 }

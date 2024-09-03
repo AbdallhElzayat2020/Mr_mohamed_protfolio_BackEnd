@@ -37,7 +37,7 @@ class Thawani
     {
         $response = Http::baseUrl($this->baseUrl)->withHeaders([
             'thawani-api-key' => $this->secret_key,
-            //'content-type' => 'application/json',    asJson add it Automatically when use asJson
+            //'content-type' => 'application/json',    asJson method add it Automatically when use asJson
         ])
             ->asJson()
             ->post('checkout/session', $data);
@@ -51,15 +51,30 @@ class Thawani
         }
 
         throw new \Exception($body['description'], $body['code']);
-
     }
 
     public function getPayUrl($session_id)
     {
         if ($this->mode == 'test') {
+
             return "https://uatcheckout.thawani.om/pay/{$session_id}?key={$this->publishable_key}";
-            // return "https://uatcheckout.thawani.om/pay/{session_id}?key=publishable_key";
         }
         return "https://checkout.thawani.om/pay/{$session_id}?key={$this->publishable_key}";
     }
+
+    public function getCheckoutSession($session_id)
+    {
+        $response = Http::baseUrl($this->baseUrl)
+            ->withHeaders([
+                'thawani-api-key' => $this->secret_key,
+            ])
+            ->get('checkout/session/' . $session_id)
+            ->json();
+        if ($response['success'] == true && $response['code'] == 2000) {
+
+            return $response;
+        }
+        throw new \Exception($response['description'], $response['code']);
+    }
+    // https://uatcheckout.thawani.om/api/v1/checkout/session/{session_id}
 }
